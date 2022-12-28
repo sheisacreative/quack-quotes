@@ -1,0 +1,17 @@
+:root {
+  /* Colors */
+  --neutral-100: #000;
+  --neutral-60: #5c5c5c;
+  --neutral-30: #ddddd5;
+  --neutral-20: #e8e8e3;
+  --neutral-10: #f4f4f1;
+  --neutral-0: #fff;
+  --primary: #eb780a;
+
+  --gradient-primary: linear-gradient(
+    270deg,
+    #fff500 0%,
+    #ff7a00 49.48%,
+    #4e1ba8 100%
+  );
+}
