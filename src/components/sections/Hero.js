@@ -1,9 +1,10 @@
 import React from "react";
 import BigQuote from "../quotes/BigQuote";
+import styles from "./Hero.module.css";
 
 const Hero = () => {
   return (
-    <section className="hero">
+    <section className={styles.hero}>
       <BigQuote />
     </section>
   );
