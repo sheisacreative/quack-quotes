@@ -2,7 +2,7 @@
 
 This website is currently under development.
 
-[Check the current build live in Netlify]()
+[Check the current build live in Netlify](https://63c1a26d07ea363c641104b7--superlative-choux-541862.netlify.app/)
 
 Meanwhile, the project doesn't have its own domain.
 
