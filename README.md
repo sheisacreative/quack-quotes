@@ -1,7 +1,8 @@
 # Quack Quotes
 
 This website is currently under development.
-[Check the current build live on Netlify]()
+
+[Check the current build live in Netlify]()
 
 Meanwhile, the project doesn't have its own domain.
 
@@ -24,6 +25,10 @@ This project is part of a volunteer project I manage for Brazilian students, [Qu
 ## Colaborations
 
 This is the first project I am starting to build and share in public. May the gods bless me. Opinions and help are welcome, but take in mind I am a designer, and still kinda newbie in the development field. :P
+
+I not even know how issues work, how someone contribute to Github and nothing else. By the way, if you want to reach me, I'll be glad to learn...
+
+My life resumes to "git add .", "git commit"and "git push".
 
 ## Things to be included
 
