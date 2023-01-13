@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { RiImage2Line } from "react-icons/ri";
 
 const ButtonIcon = ({ icon }) => {

@@ -13,7 +13,7 @@ const BigQuote = () => {
           idades.
         </h1>
         <p className={`heading-S ${styles.author}`}>
-          <a href="">Nelson Rodrigues</a>| Escritor e poeta brasileiro
+          <a href="/">Nelson Rodrigues</a>| Escritor e poeta brasileiro
         </p>
       </div>
       <hr />
