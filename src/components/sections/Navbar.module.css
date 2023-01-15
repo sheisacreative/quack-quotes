@@ -1,3 +1,7 @@
+@import "../../styles/colors.css";
+@import "../../styles/typography.css";
+
+/* Gradient Line */
 .navbarMain::before {
   content: "";
   position: absolute;
@@ -8,6 +12,7 @@
   left: 0;
 }
 
+/* General styles */
 .navbarMain {
   padding: calc(1.5rem + 0.25rem) 6rem 1.5rem 6rem;
   display: flex;
@@ -20,13 +25,38 @@ nav {
   box-sizing: border-box;
 }
 
-input {
+.searchBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
   width: 100%;
   box-sizing: border-box;
   border-radius: 2rem;
-  border: none;
-  color: var(--neutral-30);
   background-color: var(--neutral-10);
   height: 2rem;
-  padding: 0 1.5rem;
+  padding: 0 1rem 0 0.5rem;
+}
+
+input[type="search"] {
+  border: none;
+  background-color: var(--neutral-10);
+  padding: 0 0.5rem;
+  width: 100%;
+}
+
+input[type="search"]::placeholder {
+  font-family: var(----typography-family);
+  color: var(--neutral-60);
+}
+
+button[type="submit"] {
+  border: none;
+  background-color: var(--neutral-10);
+  height: 80%;
+}
+
+input[type="search"]:focus,
+button[type="submit"]:focus {
+  outline: 1px solid var(--neutral-60);
 }
