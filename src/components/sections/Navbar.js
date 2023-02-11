@@ -9,7 +9,6 @@ const Navbar = () => {
       <nav>
         <form action="submit" className={styles.searchBar}>
           {/* TODO: Fix autocomplete  */}
-          {/* TODO: Make the search work */}
           <input
             type="search"
             placeholder="Search for quotes, author, category..."
