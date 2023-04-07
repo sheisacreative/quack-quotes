@@ -1,38 +1,67 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Quack Quotes
 
-## Getting Started
+This website is currently under development.
 
-First, run the development server:
+[Check the current build live in Netlify](https://63c1a26d07ea363c641104b7--superlative-choux-541862.netlify.app/)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+Meanwhile, the project doesn't have its own domain.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## About the project
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+There are a lot of quotation websites.
+But how to guarantee who wrote the sentences?
+How to make sure we are giving proper credits?
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+This is what Quack Quotes aims to fix. Curated quotes.
+Quack Quotes values quality over quantity.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+This project is part of a volunteer project I manage for Brazilian students, [Quack Redação](https://quackredacao.com.br/about-us/). It was born in 2016 and we help students to get bet on writing essays.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Links
 
-## Learn More
+- [Verified quotations in Notion](https://sheisacreative.notion.site/39c27dcec4174747a865c586cb2458fb?v=eb05e2b23f6246fcb1f25c26848c7b0f) (Portuguese)
+- [Figma file](https://www.figma.com/file/u1PbpsSEC5nEpyOjQfVRGm/Quack-Quotes?node-id=0%3A1&t=096wWxRMy4kc7ktz-1) (just a skeleton for personal reference)
 
-To learn more about Next.js, take a look at the following resources:
+## Colaborations
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This is the first project I am starting to build and share in public. May the gods bless me. Opinions and help are welcome, but take in mind I am a designer, and still kinda newbie in the development field. :P
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+I not even know how issues work, how someone contribute to Github and nothing else. By the way, if you want to reach me, I'll be glad to learn...
 
-## Deploy on Vercel
+My life resumes to "git add .", "git commit"and "git push".
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Things to be included
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Styles
+
+- [ ] Make navbar responsive.
+- [ ] Make big quote responsive.
+- [ ] Fix quotation mark position in Big Quote.
+
+### Elements
+
+- [ ] Add tags.
+- [ ] Include all quotes on home screen.
+- [ ] Populate data.
+- [ ] Update public info (title, favicon and more).
+
+### Add funcionality
+
+- [ ] Make tags work on click.
+- [ ] Make search work.
+- [ ] Add autocomplete to search.
+- [ ] Add pagination or infitine load to quotes.
+- [ ] Add icons and actions to quote page.
+- [ ] Allow the user to change background color in quote page.
+- [ ] Find a way to allow the user to download or share an image with the quotation (any ideas here? Like, is this even possible without leaving my soul as payment?).
+- [ ] Most quotes are still in Portuguese but there's the intention of creating the website both in portuguese and English (truth: by now I have no idea on how I gotta o that. 🙊)
+
+### New pages
+
+- [ ] Implement each quote page.
+
+### Create layout
+
+- [ ] Create category page.
+- [ ] Create author page.
+- [ ] Create about the website page.

@@ -1,0 +1,59 @@
+/* Gradient Line */
+.navbarMain::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 0.25rem;
+  background: var(--gradient-primary);
+  top: 0;
+  left: 0;
+}
+
+/* General styles */
+.navbarMain {
+  padding: calc(1.5rem + 0.25rem) 6rem 1.5rem 6rem;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.searchNav {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.searchBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 2rem;
+  background-color: var(--neutral-10);
+  height: 2rem;
+  padding: 0 1rem 0 0.5rem;
+}
+
+.searchInput {
+  border: none;
+  background-color: var(--neutral-10);
+  padding: 0 0.5rem;
+  width: 100%;
+}
+
+.searchInput::placeholder {
+  font-family: var(----typography-family);
+  color: var(--neutral-60);
+}
+
+.searchButton {
+  border: none;
+  background-color: var(--neutral-10);
+  height: 80%;
+}
+
+.searchInput:focus,
+.searchButton :focus {
+  outline: 1px solid var(--neutral-60);
+}

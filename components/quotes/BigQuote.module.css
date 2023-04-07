@@ -1,0 +1,46 @@
+.bigQuote {
+  display: grid;
+  column-gap: 2rem;
+  place-items: center;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(3, auto);
+  justify-content: start;
+}
+
+.quotationMark {
+  color: var(--primary);
+  font-size: 5rem;
+}
+
+.headingL {
+  margin: 0;
+  text-indent: -2rem;
+}
+
+.author {
+  margin: 1rem 0 0 0;
+}
+
+.quoteContainer {
+  width: 100%;
+  grid-column: 1 / 9;
+  grid-row: 1;
+}
+
+.verification {
+  width: 100%;
+  grid-column: 1 / 9;
+  grid-row: 3;
+}
+
+.line {
+  grid-column: 1 / 13;
+  grid-row: 2;
+  margin-top: 1.5rem;
+}
+
+.iconsContainer {
+  grid-column: 12;
+  justify-self: end;
+  align-self: start;
+}

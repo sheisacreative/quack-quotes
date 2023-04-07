@@ -1,0 +1,60 @@
+@import "reset.css";
+@import url("https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;700&family=Work+Sans:ital,wght@1,600&display=swap");
+
+body {
+  display: flex;
+  justify-content: center;
+}
+
+main {
+  margin: 0 6rem;
+  max-width: 80rem;
+}
+
+/* Typography */
+.heading-L {
+  font-family: var(--typography-family);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2.5rem;
+  line-height: 3.25rem;
+}
+
+.heading-M {
+  font-family: var(--typography-family);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.75rem;
+  line-height: 2.5rem;
+}
+
+.heading-S {
+  font-family: var(--typography-family);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 2rem;
+}
+
+.body-M {
+  font-family: var(--typography-family);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.body-S {
+  font-family: var(--typography-family);
+  color: var(--neutral-60);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+/* Line */
+hr {
+  width: 100%;
+  border-top: 1px solid var(--neutral-30);
+}
