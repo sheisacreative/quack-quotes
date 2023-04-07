@@ -3,3 +3,9 @@
   align-items: center;
   margin: 10rem auto;
 }
+
+@media screen and (max-width: 768px) {
+  .hero {
+    margin: 6rem auto;
+  }
+}
