@@ -43,6 +43,28 @@
   line-height: 1.5rem;
 }
 
+@media screen and (max-width: 768px) {
+  .heading-L {
+    font-size: 1.75rem;
+    line-height: 2.5rem;
+  }
+
+  .heading-M {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .heading-S {
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+  }
+
+  .body-M {
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+  }
+}
+
 /* Line */
 hr {
   width: 100%;

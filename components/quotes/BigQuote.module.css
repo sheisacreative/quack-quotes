@@ -44,3 +44,15 @@
   justify-self: end;
   align-self: start;
 }
+
+@media screen and (max-width: 768px) {
+  .bigQuote {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .iconsContainer {
+    display: flex;
+    margin-top: 2rem;
+  }
+}

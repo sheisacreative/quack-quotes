@@ -18,3 +18,20 @@
   cursor: pointer;
   background-color: var(--neutral-20);
 }
+
+.actionText {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .action {
+    width: initial;
+    height: initial;
+    padding: 0.125rem 0.75rem;
+    border-radius: 2rem;
+    gap: 0.5rem;
+  }
+  .actionText {
+    display: block;
+  }
+}

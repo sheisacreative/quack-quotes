@@ -63,6 +63,6 @@
   }
 
   .quackLogo {
-    width: 64px;
+    scale: 0.8;
   }
 }

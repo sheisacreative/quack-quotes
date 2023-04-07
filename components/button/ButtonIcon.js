@@ -3,7 +3,14 @@ import { RiImage2Line } from "react-icons/ri";
 import styles from "./ButtonIcon.module.css";
 
 const ButtonIcon = ({ action, icon }) => {
-  return <li className={styles.action}>{icon}</li>;
+  return (
+    <li className={styles.action}>
+      <div className={styles.icon}>{icon}</div>
+      <span className={styles.actionText}>
+        {action === "Compartilhar" ? "" : action}
+      </span>
+    </li>
+  );
 };
 
 export default ButtonIcon;
