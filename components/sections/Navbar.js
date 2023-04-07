@@ -9,10 +9,9 @@ const Navbar = () => {
     <header className={`container ${styles.navbarMain}`}>
       <nav className={styles.searchNav}>
         <form action="submit" className={styles.searchBar}>
-          {/* TODO: Fix autocomplete  */}
           <input
             type="search"
-            placeholder="Search for quotes, author, category..."
+            placeholder="Quotes, author, category..."
             autoComplete="true"
             className={`body-S ${styles.searchInput}`}
           />
@@ -21,7 +20,7 @@ const Navbar = () => {
           </button>
         </form>
       </nav>
-      <Image src={QuackLogo} alt="Quack Redação" />
+      <Image src={QuackLogo} alt="Quack Redação" className={styles.quackLogo} />
     </header>
   );
 };
