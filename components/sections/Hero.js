@@ -4,7 +4,7 @@ import styles from "./Hero.module.css";
 
 const Hero = () => {
   return (
-    <section className={styles.hero}>
+    <section className={`container ${styles.hero}`}>
       <BigQuote />
     </section>
   );

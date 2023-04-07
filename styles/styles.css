@@ -1,16 +1,6 @@
 @import "reset.css";
 @import url("https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;700&family=Work+Sans:ital,wght@1,600&display=swap");
 
-body {
-  display: flex;
-  justify-content: center;
-}
-
-main {
-  margin: 0 6rem;
-  max-width: 80rem;
-}
-
 /* Typography */
 .heading-L {
   font-family: var(--typography-family);
@@ -57,4 +47,11 @@ main {
 hr {
   width: 100%;
   border-top: 1px solid var(--neutral-30);
+}
+
+/* Container */
+.container {
+  width: 94vw;
+  max-width: 1400px;
+  margin: 0 auto;
 }

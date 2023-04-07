@@ -6,7 +6,7 @@ import styles from "./Navbar.module.css";
 
 const Navbar = () => {
   return (
-    <header className={styles.navbarMain}>
+    <header className={`container ${styles.navbarMain}`}>
       <nav className={styles.searchNav}>
         <form action="submit" className={styles.searchBar}>
           {/* TODO: Fix autocomplete  */}

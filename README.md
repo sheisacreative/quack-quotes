@@ -28,40 +28,6 @@ This is the first project I am starting to build and share in public. May the go
 
 I not even know how issues work, how someone contribute to Github and nothing else. By the way, if you want to reach me, I'll be glad to learn...
 
-My life resumes to "git add .", "git commit"and "git push".
+My life resumes to "git add .", "git commit" and "git push".
 
-## Things to be included
-
-### Styles
-
-- [ ] Make navbar responsive.
-- [ ] Make big quote responsive.
-- [ ] Fix quotation mark position in Big Quote.
-
-### Elements
-
-- [ ] Add tags.
-- [ ] Include all quotes on home screen.
-- [ ] Populate data.
-- [ ] Update public info (title, favicon and more).
-
-### Add funcionality
-
-- [ ] Make tags work on click.
-- [ ] Make search work.
-- [ ] Add autocomplete to search.
-- [ ] Add pagination or infitine load to quotes.
-- [ ] Add icons and actions to quote page.
-- [ ] Allow the user to change background color in quote page.
-- [ ] Find a way to allow the user to download or share an image with the quotation (any ideas here? Like, is this even possible without leaving my soul as payment?).
-- [ ] Most quotes are still in Portuguese but there's the intention of creating the website both in portuguese and English (truth: by now I have no idea on how I gotta o that. 🙊)
-
-### New pages
-
-- [ ] Implement each quote page.
-
-### Create layout
-
-- [ ] Create category page.
-- [ ] Create author page.
-- [ ] Create about the website page.
+Update: I recently kind of learned what issues are meant for... haha 🙊

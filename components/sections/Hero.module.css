@@ -1,5 +1,5 @@
 .hero {
   display: flex;
   align-items: center;
-  height: 80vh;
+  margin: 10rem auto;
 }
