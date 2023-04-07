@@ -1,0 +1,8 @@
+.tagContainer {
+  display: flex;
+  gap: 0.5rem;
+  list-style-type: none;
+  padding: 0;
+  overflow: hidden;
+  white-space: nowrap;
+}

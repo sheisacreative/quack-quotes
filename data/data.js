@@ -18,3 +18,10 @@ export const actionIcons = [
     icon: <RiFileCopyLine />,
   },
 ];
+
+export const backgroundGradients = [
+  {
+    id: 1,
+    gradient: "",
+  },
+];
