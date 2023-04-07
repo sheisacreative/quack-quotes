@@ -3,6 +3,7 @@
 This website is currently under development.
 
 [Check the current build live in Netlify](https://quack-quotes.netlify.app/)
+
 [![Netlify Status](https://api.netlify.com/api/v1/badges/23acca8f-ecdd-4854-9d0a-77714e422f0a/deploy-status)](https://app.netlify.com/sites/stupendous-conkies-7663e2/deploys)
 
 Meanwhile, the project doesn't have its own domain.
