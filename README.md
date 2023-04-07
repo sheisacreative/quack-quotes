@@ -6,8 +6,6 @@ This website is currently under development.
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/23acca8f-ecdd-4854-9d0a-77714e422f0a/deploy-status)](https://app.netlify.com/sites/stupendous-conkies-7663e2/deploys)
 
-Meanwhile, the project doesn't have its own domain.
-
 ## About the project
 
 There are a lot of quotation websites.
@@ -21,7 +19,7 @@ This project is part of a volunteer project I manage for Brazilian students, [Qu
 
 ## Links
 
-- [Verified quotations in Notion](https://sheisacreative.notion.site/39c27dcec4174747a865c586cb2458fb?v=eb05e2b23f6246fcb1f25c26848c7b0f) (Portuguese)
+- [Verified quotations in Notion](https://clientes-maiane.notion.site/e76a54590cab4f9c9bfa1c6ae44d75cb?v=5690adc414734e06a102bd83a22cf3b0) (Portuguese)
 - [Figma file](https://www.figma.com/file/u1PbpsSEC5nEpyOjQfVRGm/Quack-Quotes?node-id=0%3A1&t=096wWxRMy4kc7ktz-1) (just a skeleton for personal reference)
 
 ## Colaborations
