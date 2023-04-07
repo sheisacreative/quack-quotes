@@ -55,6 +55,7 @@
 .searchInput:focus,
 .searchButton :focus {
   outline: 1px solid var(--neutral-60);
+  background-color: aqua;
 }
 
 @media screen and (max-width: 480px) {
