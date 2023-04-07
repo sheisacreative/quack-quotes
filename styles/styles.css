@@ -68,7 +68,7 @@
 /* Line */
 hr {
   width: 100%;
-  border-top: 1px solid var(--neutral-30);
+  border-top: 1px solid var(--neutral-20);
 }
 
 /* Container */
@@ -76,4 +76,9 @@ hr {
   width: 85vw;
   max-width: 1200px;
   margin: 0 auto;
+}
+
+/* Colors */
+.gray-60 {
+  color: var(--neutral-60);
 }

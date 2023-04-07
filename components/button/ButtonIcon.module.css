@@ -1,7 +1,7 @@
 .action {
   color: var(--primary);
   list-style-type: none;
-  background-color: var(--neutral-10);
+  background-color: var(--neutral-5);
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 50%;

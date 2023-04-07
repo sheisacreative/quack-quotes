@@ -5,8 +5,10 @@
   --neutral-30: #ddddd5;
   --neutral-20: #e8e8e3;
   --neutral-10: #f4f4f1;
+  --neutral-5: #f8f8f7;
   --neutral-0: #fff;
   --primary: #eb780a;
+  --primary-dark: #b55a05;
 
   --gradient-primary: linear-gradient(
     270deg,
