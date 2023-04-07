@@ -1,5 +1,5 @@
 import React from "react";
-import { RiShareLine, RiImage2Line } from "react-icons/fa";
+import { RiShareLine, RiImage2Line, RiFileCopyLine } from "react-icons/ri";
 
 export const actionIcons = [
   {
@@ -9,7 +9,12 @@ export const actionIcons = [
   },
   {
     id: 2,
-    action: "Share",
+    action: "Image",
     icon: <RiImage2Line />,
+  },
+  {
+    id: 3,
+    action: "Copy",
+    icon: <RiFileCopyLine />,
   },
 ];

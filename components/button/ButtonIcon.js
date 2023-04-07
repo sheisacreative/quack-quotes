@@ -1,12 +1,9 @@
 import React from "react";
 import { RiImage2Line } from "react-icons/ri";
+import styles from "./ButtonIcon.module.css";
 
-const ButtonIcon = ({ icon }) => {
-  return (
-    <div>
-      <RiImage2Line />
-    </div>
-  );
+const ButtonIcon = ({ action, icon }) => {
+  return <li className={styles.action}>{icon}</li>;
 };
 
 export default ButtonIcon;
