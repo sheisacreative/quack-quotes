@@ -4,7 +4,15 @@ import styles from "./TagContainer.module.css";
 
 const TagContainer = () => {
   return (
-    <ul className={`container ${styles.tagContainer}`}>
+    <ul className={`${styles.tagContainer}`}>
+      <SingleTag />
+      <SingleTag />
+      <SingleTag />
+      <SingleTag />
+      <SingleTag />
+      <SingleTag />
+      <SingleTag />
+      <SingleTag />
       <SingleTag />
       <SingleTag />
       <SingleTag />
