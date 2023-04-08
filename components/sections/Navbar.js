@@ -8,27 +8,29 @@ import TagContainer from "../tag/TagContainer";
 const Navbar = () => {
   return (
     <>
-      <header className={`container ${styles.navbarMain}`}>
-        <nav className={styles.searchNav}>
-          <form action="submit" className={styles.searchBar}>
-            <input
-              type="search"
-              placeholder="Quotes, author, category..."
-              autoComplete="true"
-              className={`body-S ${styles.searchInput}`}
-            />
-            <button type="submit" className={styles.searchButton}>
-              <IoSearch />
-            </button>
-          </form>
-        </nav>
-        <Image
-          src={QuackLogo}
-          alt="Quack Redação"
-          className={styles.quackLogo}
-        />
+      <header className={styles.navBar}>
+        <div className={`container ${styles.navbarMain}`}>
+          <nav className={styles.searchNav}>
+            <form action="submit" className={styles.searchBar}>
+              <input
+                type="search"
+                placeholder="Quotes, author, category..."
+                autoComplete="true"
+                className={`body-S ${styles.searchInput}`}
+              />
+              <button type="submit" className={styles.searchButton}>
+                <IoSearch />
+              </button>
+            </form>
+          </nav>
+          <Image
+            src={QuackLogo}
+            alt="Quack Redação"
+            className={styles.quackLogo}
+          />
+        </div>
+        <TagContainer />
       </header>
-      <TagContainer />
     </>
   );
 };

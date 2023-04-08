@@ -1,0 +1,25 @@
+.quackTitle {
+  background-color: var(--neutral-5);
+  padding: 3rem 0;
+}
+
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.quackQuotes {
+  font-weight: bold;
+}
+
+.subtitle {
+  font-style: italic;
+  width: 400px;
+}
+
+@media screen and (max-width: 768px) {
+  .subtitle {
+    width: 100%;
+  }
+}

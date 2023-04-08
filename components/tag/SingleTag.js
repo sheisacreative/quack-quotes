@@ -4,7 +4,7 @@ import styles from "./SingleTag.module.css";
 const SingleTag = () => {
   return (
     <li>
-      <button className={`body-M ${styles.singleTag}`}>Nome da Tag</button>
+      <button className={`body-S ${styles.singleTag}`}>Nome da Tag</button>
     </li>
   );
 };

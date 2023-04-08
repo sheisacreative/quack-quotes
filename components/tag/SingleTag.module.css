@@ -9,10 +9,3 @@
 .singleTag:hover {
   background-color: var(--neutral-20);
 }
-
-@media screen and (max-width: 768px) {
-  .singleTag {
-    font-size: 0.875rem;
-    line-height: 1.5rem;
-  }
-}

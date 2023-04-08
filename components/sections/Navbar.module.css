@@ -1,5 +1,5 @@
 /* Gradient Line */
-.navbarMain::before {
+.navBar::before {
   content: "";
   position: absolute;
   width: 100%;
@@ -10,10 +10,16 @@
 }
 
 /* General styles */
+.navBar {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
 
 .navbarMain {
   display: flex;
-  padding: 1.5rem 0;
+  /* padding: 1.5rem 0; */
   gap: 2rem;
   align-items: center;
 }
@@ -58,6 +64,9 @@
 }
 
 @media screen and (max-width: 480px) {
+  .navBar {
+    margin: 1rem 0;
+  }
   .navbarMain {
     gap: 1rem;
   }
