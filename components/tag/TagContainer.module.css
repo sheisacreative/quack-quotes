@@ -1,17 +1,11 @@
-.relativePosition {
-  /* position: relative; */
-}
-
 .tagContainer {
   display: flex;
   gap: 0.25rem;
   list-style-type: none;
   padding: 0;
-  /* position: absolute; */
-  margin-left: calc(((100vw - (100vw - 100%)) - 1200px) / 2);
   overflow-x: hidden;
   white-space: nowrap;
-
+  margin-left: calc(((100vw - (100vw - 100%)) - 1200px) / 2);
   /* (100vw - (100vw - 100%))
      100% = width with scrollbar
      100vw - 100% = scrollbar width
