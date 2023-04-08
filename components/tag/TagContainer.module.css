@@ -1,8 +1,25 @@
+.relativePosition {
+  /* position: relative; */
+}
+
 .tagContainer {
   display: flex;
-  gap: 0.5rem;
+  gap: 0.25rem;
   list-style-type: none;
   padding: 0;
-  overflow: hidden;
+  /* position: absolute; */
+  margin-left: calc(((100vw - (100vw - 100%)) - 1200px) / 2);
+  overflow-x: hidden;
   white-space: nowrap;
+
+  /* (100vw - (100vw - 100%))
+     100% = width with scrollbar
+     100vw - 100% = scrollbar width
+     100vw - (100vw - 100%) = width without scrollbar */
+}
+
+@media screen and (max-width: 1405px) {
+  .tagContainer {
+    margin-left: calc(((100vw - (100vw - 100%)) - 85vw) / 2);
+  }
 }
