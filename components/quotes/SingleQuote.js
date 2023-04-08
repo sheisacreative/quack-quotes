@@ -14,7 +14,7 @@ const SingleQuote = () => {
           gênios de todas as idades.
         </h3>
         <p className={`body-M ${styles.author}`}>
-          <Link href="/">Nelson Rodrigues</Link>| Escritor e poeta brasileiro
+          <Link href="/">Nelson Rodrigues</Link>, escritor e poeta brasileiro
         </p>
         <p className={`body-S ${styles.verification} `}>
           Escrito em: “Flor de Obsessão: as 1000 melhores frases de Nelson
@@ -25,7 +25,7 @@ const SingleQuote = () => {
       <div className={styles.iconsContainer}>
         <ButtonIconContainer />
       </div>
-      <div className={styles.actionsContainer}>
+      <div className={`body-M ${styles.actionsContainer}`}>
         {actionIcons.map((action) => {
           return (
             <React.Fragment key={action.id}>

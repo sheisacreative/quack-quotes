@@ -1,3 +1,9 @@
+.title {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
 .quotesList {
   display: flex;
   flex-direction: column;
@@ -11,9 +17,12 @@
 
 @media screen and (max-width: 768px) {
   .quotesList {
-    gap: 2rem;
+    gap: 1rem;
   }
   .quotesContainer {
     gap: 1rem;
+  }
+  .titleLine {
+    display: none;
   }
 }

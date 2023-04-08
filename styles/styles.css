@@ -1,25 +1,33 @@
 @import "reset.css";
-@import url("https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;700&family=Work+Sans:ital,wght@1,600&display=swap");
+@import url("https://use.typekit.net/ool5xba.css");
 
 /* Typography */
 .heading-L {
-  font-family: var(--typography-family);
-  font-style: normal;
-  font-weight: 400;
-  font-size: 2.5rem;
-  line-height: 3.25rem;
+  font-family: var(--primary-typography-family);
+  font-style: italic;
+  font-weight: normal;
+  font-size: 3rem;
+  line-height: 4rem;
 }
 
 .heading-M {
-  font-family: var(--typography-family);
-  font-style: normal;
+  font-family: var(--primary-typography-family);
+  font-style: italic;
   font-weight: 400;
-  font-size: 1.75rem;
-  line-height: 2.5rem;
+  font-size: 2rem;
+  line-height: 2.75rem;
 }
 
 .heading-S {
-  font-family: var(--typography-family);
+  font-family: var(--secondary-typography-family);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 2rem;
+}
+
+.body-L {
+  font-family: var(--secondary-typography-family);
   font-style: normal;
   font-weight: 400;
   font-size: 1.25rem;
@@ -27,19 +35,19 @@
 }
 
 .body-M {
-  font-family: var(--typography-family);
+  font-family: var(--secondary-typography-family);
   font-style: normal;
   font-weight: 400;
-  font-size: 1.25rem;
+  font-size: 1rem;
   line-height: 1.75rem;
 }
 
 .body-S {
-  font-family: var(--typography-family);
+  font-family: var(--secondary-typography-family);
   color: var(--neutral-60);
   font-style: normal;
   font-weight: 400;
-  font-size: 1rem;
+  font-size: 0.875rem;
   line-height: 1.5rem;
 }
 
@@ -59,9 +67,23 @@
     line-height: 1.5rem;
   }
 
+  .body-L {
+    font-size: 1rem;
+    line-height: 1.75rem;
+  }
+
   .body-M {
-    font-size: 1.125rem;
-    line-height: 1.5rem;
+    font-size: 0.9rem;
+    line-height: 1.75rem;
+  }
+
+  .body-S {
+    font-family: var(--secondary-typography-family);
+    color: var(--neutral-60);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.75rem;
+    line-height: 1.25rem;
   }
 }
 

@@ -13,16 +13,15 @@ const BigQuote = () => {
           vinte anos? Há pulhas, há imbecis, há santos, há gênios de todas as
           idades.
         </h1>
-        <p className={`heading-S ${styles.author}`}>
-          <Link href="/">Nelson Rodrigues</Link>| Escritor e poeta brasileiro
+        <p className={`body-L`}>
+          <Link href="/">Nelson Rodrigues</Link>, escritor e poeta brasileiro
+        </p>
+        <p className={`body-S ${styles.verification} `}>
+          Escrito em: “Flor de Obsessão: as 1000 melhores frases de Nelson
+          Rodrigues”. Verificado através de{" "}
+          <a href="https://pt.m.wikiquote.org/wiki/Idade">Wikipedia</a>.
         </p>
       </div>
-      <hr className={styles.line} />
-      <p className={`body-S ${styles.verification} `}>
-        Escrito em: “Flor de Obsessão: as 1000 melhores frases de Nelson
-        Rodrigues”. Verificado através de{" "}
-        <a href="https://pt.m.wikiquote.org/wiki/Idade">Wikipedia</a>.
-      </p>
       <div className={styles.iconsContainer}>
         <ButtonIconContainer />
       </div>

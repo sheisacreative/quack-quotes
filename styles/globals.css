@@ -18,5 +18,6 @@
   );
 
   /* Typography */
-  --typography-family: "Frank Ruhl Libre", "Times new Roman", serif;
+  --primary-typography-family: mrs-eaves-xl-serif, serif;
+  --secondary-typography-family: brother-1816, sans-serif;
 }

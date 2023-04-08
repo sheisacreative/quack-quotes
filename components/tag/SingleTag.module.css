@@ -1,11 +1,18 @@
 .singleTag {
   background-color: var(--neutral-10);
-  padding: 0.125rem 0.75rem;
-  border-radius: 1rem;
+  padding: 0.25rem 1.5rem;
+  border-radius: 2rem;
   cursor: pointer;
   border: none;
 }
 
 .singleTag:hover {
   background-color: var(--neutral-20);
+}
+
+@media screen and (max-width: 768px) {
+  .singleTag {
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+  }
 }

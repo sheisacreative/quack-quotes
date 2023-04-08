@@ -13,7 +13,7 @@
 }
 
 .headingL {
-  margin: 0;
+  margin: 0 0 1rem 0;
   text-indent: -2rem;
 }
 
@@ -34,12 +34,6 @@
   margin-top: 0.5rem;
 }
 
-.line {
-  grid-column: 1 / 13;
-  grid-row: 2;
-  margin-top: 1.5rem;
-}
-
 .iconsContainer {
   grid-column: 12;
   justify-self: end;
@@ -55,5 +49,12 @@
   .iconsContainer {
     display: flex;
     margin-top: 2rem;
+  }
+
+  .quotationMark {
+    font-size: 3rem;
+  }
+  .headingL {
+    text-indent: -1rem;
   }
 }

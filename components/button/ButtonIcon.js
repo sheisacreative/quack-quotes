@@ -4,7 +4,7 @@ import styles from "./ButtonIcon.module.css";
 
 const ButtonIcon = ({ action, icon }) => {
   return (
-    <li className={styles.action}>
+    <li className={`body-S ${styles.action}`}>
       <div className={styles.icon}>{icon}</div>
       <span className={styles.actionText}>
         {action === "Compartilhar" ? "" : action}

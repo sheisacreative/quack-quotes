@@ -58,7 +58,7 @@
 
   .actionsContainer {
     display: flex;
-    gap: 0.5rem;
+    gap: 0.25rem;
     flex-wrap: wrap;
   }
 
@@ -69,12 +69,11 @@
     justify-content: center;
     border: none;
     color: var(--primary-dark);
-
     background-color: var(--neutral-5);
   }
 
   .line {
-    margin-top: 0.5rem;
+    margin-top: 10px;
     border-left: 1px solid var(--primary-dark);
     height: 0.75rem;
   }

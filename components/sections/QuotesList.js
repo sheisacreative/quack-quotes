@@ -5,9 +5,12 @@ import styles from "./QuotesList.module.css";
 const QuotesList = () => {
   return (
     <section className={`container ${styles.quotesList}`}>
-      <h2 className="heading-S gray-60">
-        <b>123 Citações</b> verificadas
-      </h2>
+      <div className={styles.title}>
+        <h2 className="heading-S">
+          <b>123 Citações</b> verificadas
+        </h2>
+        <hr className={styles.titleLine} />
+      </div>
       <div className={styles.quotesContainer}>
         <SingleQuote />
         <SingleQuote />
