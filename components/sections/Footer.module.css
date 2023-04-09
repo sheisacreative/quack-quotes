@@ -1,6 +1,9 @@
 .footer {
   margin-top: 1rem;
+  bottom: 0;
+  margin-top: auto;
 }
+
 .content {
   display: flex;
   justify-content: space-between;

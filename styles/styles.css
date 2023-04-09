@@ -51,9 +51,17 @@
   line-height: 1.5rem;
 }
 
+a {
+  transition: color 200ms, text-decoration 200ms;
+}
 a:hover {
   color: var(--primary-dark);
 }
+
+cite {
+  font-style: normal;
+}
+
 @media screen and (max-width: 768px) {
   .heading-L {
     font-size: 1.75rem;
@@ -106,4 +114,12 @@ hr {
 /* Colors */
 .gray-60 {
   color: var(--neutral-60);
+}
+
+.neutral-20 {
+  color: var(--neutral-20);
+}
+
+.neutral-0 {
+  color: var(--neutral-0);
 }

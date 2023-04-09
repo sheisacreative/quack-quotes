@@ -1,0 +1,58 @@
+.background {
+  position: absolute;
+  width: 100vw;
+  min-height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(2px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.backLink {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  text-decoration: none;
+  margin-left: 1rem;
+}
+
+.backLink:hover {
+  color: var(--neutral-0);
+  text-decoration: underline;
+}
+
+.quoteContainer {
+  background-color: var(--neutral-0);
+}
+
+.quoteContainerBG {
+  width: 768px;
+  height: 768px;
+  background-color: antiquewhite;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.iconsContainer {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.colorsContainer {
+  position: absolute;
+  top: 0;
+  right: 0;
+}

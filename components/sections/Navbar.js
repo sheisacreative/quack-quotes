@@ -4,6 +4,7 @@ import { IoSearch } from "react-icons/io5";
 import Image from "next/image";
 import styles from "./Navbar.module.css";
 import TagContainer from "../tag/TagContainer";
+import Link from "next/link";
 
 const Navbar = () => {
   return (
@@ -14,7 +15,7 @@ const Navbar = () => {
             <form action="submit" className={styles.searchBar}>
               <input
                 type="search"
-                placeholder="Quotes, author, category..."
+                placeholder="Citação, autor, categoria..."
                 autoComplete="true"
                 className={`body-S ${styles.searchInput}`}
               />
@@ -23,11 +24,13 @@ const Navbar = () => {
               </button>
             </form>
           </nav>
-          <Image
-            src={QuackLogo}
-            alt="Quack Redação"
-            className={styles.quackLogo}
-          />
+          <Link href="/">
+            <Image
+              src={QuackLogo}
+              alt="Quack Redação"
+              className={styles.quackLogo}
+            />
+          </Link>
         </div>
         <TagContainer />
       </header>

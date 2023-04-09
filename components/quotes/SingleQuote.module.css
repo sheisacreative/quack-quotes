@@ -1,3 +1,7 @@
+.link {
+  text-decoration: none;
+}
+
 .singleQuote {
   display: flex;
   justify-content: space-between;
