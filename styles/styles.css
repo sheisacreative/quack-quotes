@@ -51,6 +51,9 @@
   line-height: 1.5rem;
 }
 
+a:hover {
+  color: var(--primary-dark);
+}
 @media screen and (max-width: 768px) {
   .heading-L {
     font-size: 1.75rem;
