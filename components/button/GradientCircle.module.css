@@ -1,4 +1,4 @@
-.action {
+.gradient {
   color: var(--primary);
   list-style-type: none;
   background-color: var(--neutral-5);
@@ -9,15 +9,12 @@
   align-items: center;
   justify-content: center;
   border: none;
+  transition: scale 200ms ease-in-out;
 }
 
-.action svg {
-  scale: 1.2;
-}
-
-.action:hover {
+.gradient:hover {
   cursor: pointer;
-  background-color: var(--neutral-20);
+  scale: 1.1;
 }
 
 .actionText {

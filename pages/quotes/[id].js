@@ -11,6 +11,8 @@ import {
   RiHeart3Line,
 } from "react-icons/ri";
 import Image from "next/image";
+import nelson from "../../public/images/author/nelson-rodrigues.jpg";
+import GradientsContainer from "@/components/button/GradientsContainer";
 
 const SingleQuotePage = () => {
   return (
@@ -31,27 +33,34 @@ const SingleQuotePage = () => {
             }}
           >
             <div className={styles.quoteContainer}>
-              <div className={`${styles.author}`}>
-                <Image src="" alt="" />
-                <p className="body-M">
-                  <cite>
-                    <Link href="/">Nelson Rodrigues</Link>
-                  </cite>
+              <div className={styles.quote}>
+                <div className={`${styles.author}`}>
+                  <Image src={nelson} alt="" className={styles.authorImg} />
+                  <div>
+                    <p className="body-M">
+                      <cite>
+                        <Link href="/" className={styles.authorName}>
+                          Nelson Rodrigues
+                        </Link>
+                      </cite>
+                    </p>
+                    <p className="body-S">escritor e poeta brasileiro</p>
+                  </div>
+                </div>
+
+                <blockquote>
+                  <p className={`heading-M`}>
+                    A mais tola das virtudes é a idade. Que significa ter
+                    quinze, dezessete, dezoito ou vinte anos? Há pulhas, há
+                    imbecis, há santos, há gênios de todas as idades.
+                  </p>
+                </blockquote>
+                <p className={`body-S ${styles.verification} `}>
+                  Escrito em: “Flor de Obsessão: as 1000 melhores frases de
+                  Nelson Rodrigues”. Verificado:{" "}
+                  <a href="https://pt.m.wikiquote.org/wiki/Idade">Wikipedia</a>.
                 </p>
-                <p className="body-S">escritor e poeta brasileiro</p>
               </div>
-              <blockquote>
-                <p className={`heading-M`}>
-                  A mais tola das virtudes é a idade. Que significa ter quinze,
-                  dezessete, dezoito ou vinte anos? Há pulhas, há imbecis, há
-                  santos, há gênios de todas as idades.
-                </p>
-              </blockquote>
-              <p className={`body-S ${styles.verification} `}>
-                Escrito em: “Flor de Obsessão: as 1000 melhores frases de Nelson
-                Rodrigues”. Verificado:{" "}
-                <a href="https://pt.m.wikiquote.org/wiki/Idade">Wikipedia</a>.
-              </p>
               <hr />
               <div className={`body-L ${styles.engagement}`}>
                 <p>
@@ -64,7 +73,7 @@ const SingleQuotePage = () => {
                 </p>
               </div>
             </div>
-            <p className="quackQuotesLink body-S neutral-0">
+            <p className={`${styles.quackQuotesLink} body-S neutral-0`}>
               quackquotes.com.br
             </p>
           </article>
@@ -72,11 +81,13 @@ const SingleQuotePage = () => {
             <ButtonIconContainer />
           </div>
           <div className={styles.colorsContainer}>
-            <div className="color">hu</div>
+            <GradientsContainer />
           </div>
-          <footer className="body-M neutral-20">
-            Esta citação está errada?{" "}
-            <a href="https://quackredacao.com.br/">Informe o erro</a>.
+          <footer className={`body-S neutral-20 ${styles.footer}`}>
+            <p>
+              Esta citação está errada?{" "}
+              <a href="https://quackredacao.com.br/">Informe o erro</a>.
+            </p>
           </footer>
         </section>
       </div>
