@@ -1,10 +1,7 @@
-.link {
-  text-decoration: none;
-}
-
 .singleQuote {
   display: flex;
   justify-content: space-between;
+  text-decoration: none;
   gap: 8rem;
   padding: 3rem 0;
   transition-property: color, background-color, padding;
