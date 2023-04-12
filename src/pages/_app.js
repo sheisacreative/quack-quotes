@@ -1,8 +1,8 @@
 import Head from "next/head";
-import "@/styles/globals.css";
-import "@/styles/styles.css";
-import Navbar from "@/components/sections/Navbar";
-import Footer from "@/components/sections/Footer";
+import "@/src/styles/globals.css";
+import "@/src/styles/styles.css";
+import Navbar from "@/src/components/sections/Navbar";
+import Footer from "@/src/components/sections/Footer";
 import styles from "./_app.module.css";
 
 export default function App({ Component, pageProps }) {

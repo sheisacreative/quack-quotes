@@ -1,7 +1,7 @@
 import React from "react";
 import Hero from "../components/sections/Hero";
-import QuotesList from "@/components/sections/QuotesList";
-import QuackTitle from "@/components/sections/QuackTitle";
+import QuotesList from "@/src/components/sections/QuotesList";
+import QuackTitle from "@/src/components/sections/QuackTitle";
 
 const Home = () => {
   return (

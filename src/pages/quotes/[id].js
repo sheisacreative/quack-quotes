@@ -2,17 +2,11 @@ import Head from "next/head";
 import React from "react";
 import styles from "./[id].module.css";
 import Link from "next/link";
-import ButtonIconContainer from "@/components/button/ButtonIconContainer";
-import { actionIcons } from "../../data/data";
-import {
-  RiArrowDropLeftLine,
-  RiArrowLeftLine,
-  RiEyeLine,
-  RiHeart3Line,
-} from "react-icons/ri";
+import ButtonIconContainer from "@/src/components/button/ButtonIconContainer";
+import { RiArrowLeftLine, RiEyeLine, RiHeart3Line } from "react-icons/ri";
 import Image from "next/image";
-import nelson from "../../public/images/author/nelson-rodrigues.jpg";
-import GradientsContainer from "@/components/button/GradientsContainer";
+import nelson from "../../../public/images/author/nelson-rodrigues.jpg";
+import GradientsContainer from "@/src/components/button/GradientsContainer";
 
 const SingleQuotePage = () => {
   return (

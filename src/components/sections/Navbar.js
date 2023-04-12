@@ -1,5 +1,5 @@
 import React from "react";
-import QuackLogo from "../../public/images/quack.svg";
+import QuackLogo from "../../../public/images/quack.svg";
 import { IoSearch } from "react-icons/io5";
 import Image from "next/image";
 import styles from "./Navbar.module.css";
