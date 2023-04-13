@@ -5,7 +5,7 @@
     ".gitignore": true,
     ".eslintrc.json": true,
     "node_modules": true,
-    ".vscode": true,
+    // ".vscode": true,
 
     "package-lock.json": true
   }

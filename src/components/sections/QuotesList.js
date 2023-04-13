@@ -2,7 +2,8 @@ import React from "react";
 import SingleQuote from "../quotes/SingleQuote";
 import styles from "./QuotesList.module.css";
 
-const QuotesList = () => {
+const QuotesList = ({ results }) => {
+  console.log(results);
   return (
     <section className={`container ${styles.quotesList}`}>
       <div className={styles.title}>
