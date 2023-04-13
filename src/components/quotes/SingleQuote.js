@@ -4,27 +4,41 @@ import Link from "next/link";
 import ButtonIconContainer from "../button/ButtonIconContainer";
 import { actionIcons } from "../../data/data";
 
-const SingleQuote = () => {
+const SingleQuote = ({
+  Author,
+  Quote,
+  Source,
+  VerificationSource,
+  VerificationLink,
+}) => {
+  const joinSentence = (myArray) => {
+    let sentence = "";
+
+    myArray.map((item) => {
+      sentence = `${sentence}${item.plain_text}`;
+    });
+
+    return sentence;
+  };
+
+  const source = joinSentence(Source.rich_text);
+
   return (
     <article className={styles.singleQuote}>
       <div className={styles.quoteContainer}>
         <blockquote>
-          <p className={`heading-M`}>
-            A mais tola das virtudes é a idade. Que significa ter quinze,
-            dezessete, dezoito ou vinte anos? Há pulhas, há imbecis, há santos,
-            há gênios de todas as idades.
-          </p>
+          <p className={`heading-M`}>{Quote.title[0].plain_text}</p>
         </blockquote>
 
         <p className={`body-M ${styles.author}`}>
-          <cite>
-            <Link href="/">Nelson Rodrigues</Link>, escritor e poeta brasileiro.
-          </cite>
+          <cite>{Author.rich_text[0].plain_text}</cite>
         </p>
         <p className={`body-S ${styles.verification} `}>
-          Escrito em: “Flor de Obsessão: as 1000 melhores frases de Nelson
-          Rodrigues”. Verificado através de
-          <a href="https://pt.m.wikiquote.org/wiki/Idade">Wikipedia</a>.
+          {source}. Verificado através de{" "}
+          <a href={VerificationLink.url} target="blank">
+            {VerificationSource.rich_text[0].plain_text}
+          </a>
+          .
         </p>
       </div>
       <div className={styles.iconsContainer}>
