@@ -62,10 +62,10 @@
   outline: 1px solid var(--neutral-60);
 }
 
-/* .quackLogo {
+.quackLogo {
   width: auto;
   height: auto;
-} */
+}
 
 @media screen and (max-width: 480px) {
   .navBar {
