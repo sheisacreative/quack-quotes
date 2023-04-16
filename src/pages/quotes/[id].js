@@ -7,12 +7,27 @@ import { RiArrowLeftLine, RiEyeLine, RiHeart3Line } from "react-icons/ri";
 import Image from "next/image";
 import nelson from "../../../public/images/author/nelson-rodrigues.jpg";
 import GradientsContainer from "@/src/components/button/GradientsContainer";
+import {
+  fetchQuotes,
+  getAllQuotesPaths,
+  getPage,
+  joinSentence,
+} from "../api/notionApi";
 
-const SingleQuotePage = () => {
+const SingleQuotePage = ({ quote }) => {
+  const {
+    Author,
+    AuthorTitle,
+    Quote,
+    Source,
+    VerificationLink,
+    VerificationSource,
+  } = quote;
+
   return (
     <>
       <Head>
-        <title>Nomine da citação</title>
+        <title>Citação de {Author.rich_text[0].plain_text}</title>
       </Head>
       <div className={styles.background}>
         <section className={styles.content}>
@@ -29,30 +44,34 @@ const SingleQuotePage = () => {
             <div className={styles.quoteContainer}>
               <div className={styles.quote}>
                 <div className={`${styles.author}`}>
-                  <Image src={nelson} alt="" className={styles.authorImg} />
+                  <Image
+                    src={nelson}
+                    alt={`Foto de ${joinSentence(Author.rich_text)}`}
+                    className={styles.authorImg}
+                  />
                   <div>
                     <p className="body-M">
                       <cite>
                         <Link href="/" className={styles.authorName}>
-                          Nelson Rodrigues
+                          {joinSentence(Author.rich_text)}
                         </Link>
                       </cite>
                     </p>
-                    <p className="body-S">escritor e poeta brasileiro</p>
+                    <p className="body-S">
+                      {joinSentence(AuthorTitle.rich_text)}
+                    </p>
                   </div>
                 </div>
 
                 <blockquote>
-                  <p className={`heading-M`}>
-                    A mais tola das virtudes é a idade. Que significa ter
-                    quinze, dezessete, dezoito ou vinte anos? Há pulhas, há
-                    imbecis, há santos, há gênios de todas as idades.
-                  </p>
+                  <p className={`heading-M`}>{Quote.title[0].plain_text}</p>
                 </blockquote>
                 <p className={`body-S ${styles.verification} `}>
-                  Escrito em: “Flor de Obsessão: as 1000 melhores frases de
-                  Nelson Rodrigues”. Verificado:{" "}
-                  <a href="https://pt.m.wikiquote.org/wiki/Idade">Wikipedia</a>.
+                  {joinSentence(Source.rich_text)} Verificado através de{" "}
+                  <a href={VerificationLink.url} target="blank">
+                    {joinSentence(VerificationSource.rich_text)}
+                  </a>
+                  .
                 </p>
               </div>
               <hr />
@@ -90,3 +109,20 @@ const SingleQuotePage = () => {
 };
 
 export default SingleQuotePage;
+
+export async function getStaticProps(context) {
+  const page = await getPage(context.params.id);
+
+  return { props: { quote: page.properties } };
+}
+
+export async function getStaticPaths() {
+  const databaseId = process.env.NOTION_DATABASE_ID;
+  const quotes = await fetchQuotes(databaseId);
+  const paths = await getAllQuotesPaths(quotes);
+
+  return {
+    paths,
+    fallback: false,
+  };
+}

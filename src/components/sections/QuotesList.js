@@ -1,8 +1,11 @@
 import React from "react";
 import SingleQuote from "../quotes/SingleQuote";
 import styles from "./QuotesList.module.css";
+import { useQuotesContext } from "../../contexts/quotesContext";
 
-const QuotesList = ({ quotes }) => {
+const QuotesList = () => {
+  const { quotes } = useQuotesContext();
+
   return (
     <section className={`container ${styles.quotesList}`}>
       <div className={styles.title}>
@@ -13,9 +16,13 @@ const QuotesList = ({ quotes }) => {
       </div>
       <div className={styles.quotesContainer}>
         {quotes.map((quote) => {
-          console.log(quote);
-
-          return <SingleQuote key={quote.id} {...quote.properties} />;
+          return (
+            <SingleQuote
+              key={quote.id}
+              quoteId={quote.id}
+              {...quote.properties}
+            />
+          );
         })}
       </div>
     </section>

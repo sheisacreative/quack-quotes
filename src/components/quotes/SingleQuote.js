@@ -3,38 +3,42 @@ import styles from "./SingleQuote.module.css";
 import Link from "next/link";
 import ButtonIconContainer from "../button/ButtonIconContainer";
 import { actionIcons } from "../../data/data";
+import { useQuotesContext } from "@/src/contexts/quotesContext";
+import { useRouter } from "next/router";
+import { firstLower } from "@/src/utils/supportFunctions";
+import { joinSentence } from "@/src/pages/api/notionApi";
 
 const SingleQuote = ({
+  quoteId,
   Author,
+  AuthorTitle,
   Quote,
   Source,
   VerificationSource,
   VerificationLink,
 }) => {
-  const joinSentence = (myArray) => {
-    let sentence = "";
-
-    myArray.map((item) => {
-      sentence = `${sentence}${item.plain_text}`;
-    });
-
-    return sentence;
-  };
-
+  const router = useRouter();
   const source = joinSentence(Source.rich_text);
 
+  const navigateToSingleQuote = () => {
+    router.push(`/quotes/${quoteId}`);
+  };
+
   return (
-    <article className={styles.singleQuote}>
+    <article className={styles.singleQuote} onClick={navigateToSingleQuote}>
       <div className={styles.quoteContainer}>
         <blockquote>
           <p className={`heading-M`}>{Quote.title[0].plain_text}</p>
         </blockquote>
 
         <p className={`body-M ${styles.author}`}>
-          <cite>{Author.rich_text[0].plain_text}</cite>
+          <cite>
+            {joinSentence(Author.rich_text)},{" "}
+            {firstLower(joinSentence(AuthorTitle.rich_text))}
+          </cite>
         </p>
         <p className={`body-S ${styles.verification} `}>
-          {source}. Verificado através de{" "}
+          {source} Verificado através de{" "}
           <a href={VerificationLink.url} target="blank">
             {VerificationSource.rich_text[0].plain_text}
           </a>
