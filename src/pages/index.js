@@ -6,7 +6,7 @@ import QuackTitle from "@/src/components/sections/QuackTitle";
 import QuotesProvider from "../contexts/quotesContext";
 import { fetchQuotes } from "./api/notionApi";
 
-const Index = ({ quotes }) => {
+const Home = ({ quotes }) => {
   return (
     <QuotesProvider quotes={quotes}>
       <main>
@@ -18,7 +18,7 @@ const Index = ({ quotes }) => {
   );
 };
 
-export default Index;
+export default Home;
 
 export async function getStaticProps() {
   const databaseId = process.env.NOTION_DATABASE_ID;
