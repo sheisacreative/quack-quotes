@@ -11,7 +11,7 @@ export const fetchQuotes = async (databaseId) => {
   return response.results;
 };
 
-export const getAllQuotesPaths = (quotesObject) => {
+export const getAllQuotesIds = (quotesObject) => {
   const quotesArray = Array.from(quotesObject);
 
   return quotesArray.map((quote) => {

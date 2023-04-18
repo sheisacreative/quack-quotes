@@ -9,7 +9,7 @@ import nelson from "../../../public/images/author/nelson-rodrigues.jpg";
 import GradientsContainer from "@/src/components/button/GradientsContainer";
 import {
   fetchQuotes,
-  getAllQuotesPaths,
+  getAllQuotesIds,
   getPage,
   joinSentence,
 } from "../api/notionApi";
@@ -27,7 +27,7 @@ const SingleQuotePage = ({ quote }) => {
   return (
     <>
       <Head>
-        <title>Citação de {Author.rich_text[0].plain_text}</title>
+        <title>Citação</title>
       </Head>
       <div className={styles.background}>
         <section className={styles.content}>
@@ -119,10 +119,10 @@ export async function getStaticProps(context) {
 export async function getStaticPaths() {
   const databaseId = process.env.NOTION_DATABASE_ID;
   const quotes = await fetchQuotes(databaseId);
-  const paths = await getAllQuotesPaths(quotes);
+  const paths = await getAllQuotesIds(quotes);
 
   return {
     paths,
-    fallback: false,
+    fallback: true,
   };
 }
