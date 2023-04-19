@@ -49,19 +49,17 @@ const SingleQuote = ({
       <div className={styles.iconsContainer}>
         <ButtonIconContainer />
       </div>
-      <Link href={`/quotes/${quoteId}`}>
-        <div className={`body-M ${styles.actionsContainer}`}>
-          {actionIcons.map((action) => {
-            return (
-              <React.Fragment key={action.id}>
-                {" "}
-                <button className={styles.actionButton}>{action.action}</button>
-                {action.id != 3 ? <div className={styles.line} /> : ""}
-              </React.Fragment>
-            );
-          })}
-        </div>
-      </Link>
+      <div className={`body-M ${styles.actionsContainer}`}>
+        {actionIcons.map((action) => {
+          return (
+            <React.Fragment key={action.id}>
+              {" "}
+              <button className={styles.actionButton}>{action.action}</button>
+              {action.id != 3 ? <div className={styles.line} /> : ""}
+            </React.Fragment>
+          );
+        })}
+      </div>
     </article>
   );
 };
