@@ -111,18 +111,29 @@ const SingleQuotePage = ({ quote }) => {
 export default SingleQuotePage;
 
 export async function getStaticProps(context) {
-  const page = await getPage(context.params.id);
-
-  return { props: { quote: page.properties } };
+  try {
+    const page = await getPage(context.params.id);
+    return { props: { quote: page.properties } };
+  } catch (e) {
+    console.log("Error retrieving page props :(");
+    console.log(e);
+    return { props: { quote: null } };
+  }
 }
 
 export async function getStaticPaths() {
-  const databaseId = process.env.NOTION_DATABASE_ID;
-  const quotes = await fetchQuotes(databaseId);
-  const paths = await getAllQuotesIds(quotes);
+  try {
+    const databaseId = process.env.NOTION_DATABASE_ID;
+    const quotes = await fetchQuotes(databaseId);
+    const paths = await getAllQuotesIds(quotes);
 
-  return {
-    paths,
-    fallback: false,
-  };
+    return {
+      paths,
+      fallback: false,
+    };
+  } catch (e) {
+    console.log("Error generating static paths :(");
+    console.log(e);
+    return null;
+  }
 }

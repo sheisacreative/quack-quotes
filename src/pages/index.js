@@ -21,9 +21,15 @@ const Home = ({ quotes }) => {
 export default Home;
 
 export async function getStaticProps() {
-  const databaseId = process.env.NOTION_DATABASE_ID;
+  try {
+    const databaseId = process.env.NOTION_DATABASE_ID;
 
-  const quotes = await fetchQuotes(databaseId);
+    const quotes = await fetchQuotes(databaseId);
 
-  return { props: { quotes: quotes } };
+    return { props: { quotes: quotes } };
+  } catch (e) {
+    console.log("Error getting all quotes :(");
+    console.log(e);
+    return { props: { quotes: null } };
+  }
 }
