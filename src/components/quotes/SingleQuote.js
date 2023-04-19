@@ -21,7 +21,8 @@ const SingleQuote = ({
   const source = joinSentence(Source.rich_text);
 
   const navigateToSingleQuote = () => {
-    router.push(`/quotes/${quoteId}`);
+    // router.push(`/quotes/${quoteId}`);
+    console.log("hey");
   };
 
   return (
@@ -48,17 +49,19 @@ const SingleQuote = ({
       <div className={styles.iconsContainer}>
         <ButtonIconContainer />
       </div>
-      <div className={`body-M ${styles.actionsContainer}`}>
-        {actionIcons.map((action) => {
-          return (
-            <React.Fragment key={action.id}>
-              {" "}
-              <button className={styles.actionButton}>{action.action}</button>
-              {action.id != 3 ? <div className={styles.line} /> : ""}
-            </React.Fragment>
-          );
-        })}
-      </div>
+      <Link href={`/quotes/${quoteId}`}>
+        <div className={`body-M ${styles.actionsContainer}`}>
+          {actionIcons.map((action) => {
+            return (
+              <React.Fragment key={action.id}>
+                {" "}
+                <button className={styles.actionButton}>{action.action}</button>
+                {action.id != 3 ? <div className={styles.line} /> : ""}
+              </React.Fragment>
+            );
+          })}
+        </div>
+      </Link>
     </article>
   );
 };
