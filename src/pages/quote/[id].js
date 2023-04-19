@@ -123,7 +123,7 @@ export async function getStaticProps(context) {
 
 export async function getStaticPaths() {
   try {
-    const databaseId = process.env.NOTION_DATABASE_ID;
+    const databaseId = await process.env.NOTION_DATABASE_ID;
     const quotes = await fetchQuotes(databaseId);
     const paths = await getAllQuotesIds(quotes);
 
