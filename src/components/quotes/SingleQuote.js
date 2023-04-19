@@ -21,7 +21,7 @@ const SingleQuote = ({
   const source = joinSentence(Source.rich_text);
 
   const navigateToSingleQuote = () => {
-    router.push(`/quotes/${quoteId}`);
+    router.push(`/quote/${quoteId}`);
   };
 
   return (
