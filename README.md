@@ -33,7 +33,6 @@
 - [👀 Demo Website](#-demo-website)
 - [💻 Technologies](#-technologies)
 - [🚀 Features](#-features)
-  - [🔗 Links](#-links)
 - [🚧 How to run](#-how-to-run)
 - [🐛 Issues](#-issues)
 - [🎉 Contributing](#-contributing)
@@ -63,8 +62,6 @@ This is what Quack Quotes aims to fix. Curated quotes.
 Quack Quotes values quality over quantity.
 
 This project is part of a volunteer project I manage for Brazilian students, [Quack Redação](https://quackredacao.com.br/about-us/). It was born in 2016 and we help students to get bet on writing essays.
-
-## 🔗 Links
 
 - [Verified quotations in Notion](https://clientes-maiane.notion.site/e76a54590cab4f9c9bfa1c6ae44d75cb?v=5690adc414734e06a102bd83a22cf3b0) (Portuguese)
 - [Figma file](https://www.figma.com/file/u1PbpsSEC5nEpyOjQfVRGm/Quack-Quotes?node-id=0%3A1&t=096wWxRMy4kc7ktz-1) (just a skeleton for personal reference)
