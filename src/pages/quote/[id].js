@@ -28,7 +28,15 @@ const SingleQuotePage = ({ quote }) => {
   return (
     <>
       <Head>
-        <title>Citação</title>
+        <title>Citação de {joinSentence(Author.rich_text)}</title>
+        <Head>
+          <meta
+            name="description"
+            content={`Citações verificadas de ${joinSentence(
+              Author.rich_text,
+            )}! Autorias verificadas uma a uma para garantir história e créditos sempre respeitados.`}
+          />
+        </Head>
       </Head>
       <div className={styles.background}>
         <section className={styles.content}>
