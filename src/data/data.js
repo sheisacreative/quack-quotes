@@ -9,7 +9,7 @@ export const actionIcons = [
   },
   {
     id: 2,
-    action: "Imagem",
+    action: "Baixar imagem",
     icon: <RiImage2Line />,
   },
   {

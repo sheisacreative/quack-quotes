@@ -102,9 +102,38 @@
   margin: 3.5rem -3.5rem;
 }
 
+.mobileActions {
+  display: none;
+}
 .colorsContainer {
   position: absolute;
   bottom: 0;
   right: 0;
   margin: 3.5rem -3.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  .iconsContainer {
+    display: none;
+  }
+  .mobileActions {
+    display: initial;
+  }
+
+  .content {
+    position: initial;
+  }
+  .quoteContainerBG {
+    width: 95vw;
+    height: auto;
+    padding: 1rem 1rem 3rem 1rem;
+  }
+
+  .quoteContainer {
+    width: initial;
+  }
+
+  .colorsContainer {
+    display: none;
+  }
 }

@@ -1,9 +1,7 @@
 import React from "react";
 import styles from "./SingleQuote.module.css";
-import Link from "next/link";
-import ButtonIconContainer from "../button/ButtonIconContainer";
+import ButtonIconContainer from "../button/ButtonIcon/ButtonIconContainer";
 import { actionIcons } from "../../data/data";
-import { useQuotesContext } from "@/src/contexts/quotesContext";
 import { useRouter } from "next/router";
 import { firstLower } from "@/src/utils/supportFunctions";
 import { joinSentence } from "@/src/pages/api/notionApi";

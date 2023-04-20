@@ -1,6 +1,6 @@
 import React from "react";
 import ButtonIcon from "./ButtonIcon";
-import { actionIcons } from "../../data/data";
+import { actionIcons } from "../../../data/data";
 import styles from "./ButtonIconContainer.module.css";
 
 const ButtonIconContainer = () => {

@@ -2,17 +2,18 @@ import Head from "next/head";
 import React from "react";
 import styles from "./[id].module.css";
 import Link from "next/link";
-import ButtonIconContainer from "@/src/components/button/ButtonIconContainer";
+import ButtonIconContainer from "@/src/components/button/ButtonIcon/ButtonIconContainer";
 import { RiArrowLeftLine, RiEyeLine, RiHeart3Line } from "react-icons/ri";
 import Image from "next/image";
 import nelson from "../../../public/images/author/nelson-rodrigues.jpg";
-import GradientsContainer from "@/src/components/button/GradientsContainer";
+import GradientsContainer from "@/src/components/button/Gradients/GradientsContainer";
 import {
   fetchQuotes,
   getAllQuotesIds,
   getPage,
   joinSentence,
 } from "../api/notionApi";
+import MobileButtonsContainer from "@/src/components/button/MobileButtons/MobileButtonsContainer";
 
 const SingleQuotePage = ({ quote }) => {
   const {
@@ -31,10 +32,13 @@ const SingleQuotePage = ({ quote }) => {
       </Head>
       <div className={styles.background}>
         <section className={styles.content}>
+          {/* Back home Link */}
           <Link href="/" className={`body-M neutral-20 ${styles.backLink}`}>
             <RiArrowLeftLine />
             Voltar para citações
           </Link>
+
+          {/* Quote container */}
           <article
             className={styles.quoteContainerBG}
             style={{
@@ -90,12 +94,23 @@ const SingleQuotePage = ({ quote }) => {
               quackquotes.com.br
             </p>
           </article>
-          <div className={styles.iconsContainer}>
+
+          {/* Desktop Actions Icons */}
+          <div className={`${styles.iconsContainer}`}>
             <ButtonIconContainer />
           </div>
+
+          {/* Mobile Actions */}
+          <div className={`${styles.mobileActions}`}>
+            <MobileButtonsContainer />
+          </div>
+
+          {/* Gradient Icons */}
           <div className={styles.colorsContainer}>
             <GradientsContainer />
           </div>
+
+          {/* Is this quote wrong? */}
           <footer className={`body-S neutral-20 ${styles.footer}`}>
             <p>
               Esta citação está errada?{" "}

@@ -1,0 +1,26 @@
+.action {
+  color: var(--primary);
+  list-style-type: none;
+  background-color: var(--neutral-5);
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 2rem;
+  min-height: 2.5rem;
+  width: 100%;
+}
+
+.action svg {
+  scale: 1.2;
+}
+
+.action:hover {
+  cursor: pointer;
+  background-color: var(--neutral-20);
+}
+
+.buttonContainer {
+  width: 100%;
+}

@@ -1,5 +1,5 @@
 import React from "react";
-import ButtonIconContainer from "../button/ButtonIconContainer";
+import ButtonIconContainer from "../button/ButtonIcon/ButtonIconContainer";
 import styles from "./BigQuote.module.css";
 import Link from "next/link";
 import { useQuotesContext } from "../../contexts/quotesContext";
