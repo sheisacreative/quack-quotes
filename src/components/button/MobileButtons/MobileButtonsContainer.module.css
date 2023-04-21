@@ -1,8 +1,14 @@
 .actionContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  list-style: none;
-  width: 100%;
-  padding: 0;
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .actionContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    list-style: none;
+    width: 100%;
+    padding: 0;
+  }
 }

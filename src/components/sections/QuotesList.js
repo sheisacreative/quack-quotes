@@ -20,7 +20,7 @@ const QuotesList = () => {
             <SingleQuote
               key={quote.id}
               quoteId={quote.id}
-              {...quote.properties}
+              quote={quote.properties}
             />
           );
         })}

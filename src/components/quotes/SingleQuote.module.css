@@ -20,15 +20,6 @@
   padding: 3rem;
 }
 
-.author {
-  margin-top: 1rem;
-  color: var(--neutral-100);
-}
-
-.verification {
-  margin-top: 0.5rem;
-}
-
 .actionsContainer {
   display: none;
 }

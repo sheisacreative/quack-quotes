@@ -3,9 +3,9 @@ import styles from "./GradientsContainer.module.css";
 import GradientCircle from "./GradientCircle";
 import { backgroundGradients } from "../../../data/data";
 
-const GradientsContainer = () => {
+const GradientsContainer = ({ className }) => {
   return (
-    <ul className={styles.gradientsContainer}>
+    <ul className={`${className} ${styles.gradientsContainer}`}>
       {backgroundGradients.map((gradient) => {
         return <GradientCircle key={gradient.id} {...gradient} />;
       })}

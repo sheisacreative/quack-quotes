@@ -3,20 +3,12 @@ import styles from "./SingleQuote.module.css";
 import ButtonIconContainer from "../button/ButtonIcon/ButtonIconContainer";
 import { actionIcons } from "../../data/data";
 import { useRouter } from "next/router";
-import { firstLower } from "@/src/utils/supportFunctions";
-import { joinSentence } from "@/src/pages/api/notionApi";
+import Author from "./support/Author";
+import QuoteText from "./support/QuoteText";
+import VerificationText from "./support/VerificationText";
 
-const SingleQuote = ({
-  quoteId,
-  Author,
-  AuthorTitle,
-  Quote,
-  Source,
-  VerificationSource,
-  VerificationLink,
-}) => {
+const SingleQuote = ({ quote, quoteId }) => {
   const router = useRouter();
-  const source = joinSentence(Source.rich_text);
 
   const navigateToSingleQuote = () => {
     router.push(`/quote/${quoteId}`);
@@ -24,25 +16,14 @@ const SingleQuote = ({
 
   return (
     <article className={styles.singleQuote} onClick={navigateToSingleQuote}>
+      {/* Quote */}
       <div className={styles.quoteContainer}>
-        <blockquote>
-          <p className={`heading-M`}>{Quote.title[0].plain_text}</p>
-        </blockquote>
-
-        <p className={`body-M ${styles.author}`}>
-          <cite>
-            {joinSentence(Author.rich_text)},{" "}
-            {firstLower(joinSentence(AuthorTitle.rich_text))}
-          </cite>
-        </p>
-        <p className={`body-S ${styles.verification} `}>
-          {source} Verificado através de{" "}
-          <a href={VerificationLink.url} target="blank">
-            {VerificationSource.rich_text[0].plain_text}
-          </a>
-          .
-        </p>
+        <QuoteText {...quote} />
+        <Author className={`body-M`} {...quote} />
+        <VerificationText marginTop {...quote} />
       </div>
+
+      {/* Action Buttons */}
       <div className={styles.iconsContainer}>
         <ButtonIconContainer />
       </div>

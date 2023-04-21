@@ -3,9 +3,9 @@ import ButtonIcon from "./ButtonIcon";
 import { actionIcons } from "../../../data/data";
 import styles from "./ButtonIconContainer.module.css";
 
-const ButtonIconContainer = () => {
+const ButtonIconContainer = ({ className }) => {
   return (
-    <ul className={styles.actionContainer}>
+    <ul className={`${className} ${styles.actionContainer}`}>
       {actionIcons.map((action) => {
         return <ButtonIcon key={action.id} {...action} />;
       })}

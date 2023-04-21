@@ -1,0 +1,17 @@
+.bigQuote {
+  text-indent: -2rem;
+}
+
+.quotationMark {
+  color: var(--primary);
+  font-size: 5rem;
+}
+
+@media screen and (max-width: 768px) {
+  .quotationMark {
+    font-size: 3rem;
+  }
+  .bigQuote {
+    text-indent: -1rem;
+  }
+}

@@ -49,21 +49,6 @@
   padding: 2.5rem 2rem;
   border-radius: 0.75rem;
 }
-.author {
-  display: flex;
-  gap: 1rem;
-}
-
-.authorImg {
-  width: 4rem;
-  height: 4rem;
-  object-fit: cover;
-  border-radius: 50%;
-}
-.authorName {
-  text-decoration: none;
-  font-weight: bold;
-}
 
 .quote {
   display: flex;
@@ -102,10 +87,7 @@
   margin: 3.5rem -3.5rem;
 }
 
-.mobileActions {
-  display: none;
-}
-.colorsContainer {
+.gradientsContainer {
   position: absolute;
   bottom: 0;
   right: 0;
@@ -115,7 +97,6 @@
 @media screen and (max-width: 768px) {
   .content {
     margin: 0.5rem 0;
-    padding: 1rem;
   }
 
   .quoteContainerBG {
@@ -128,12 +109,14 @@
     width: initial;
   }
 
-  .colorsContainer {
-    display: none;
+  .gradientsContainer {
+    position: initial;
+    display: none !important; /* To override component display */
   }
 
   .iconsContainer {
-    display: none;
+    position: initial;
+    display: none !important; /* To override component display */
   }
   .mobileActions {
     display: initial;

@@ -1,43 +1,21 @@
-import Head from "next/head";
 import React from "react";
 import styles from "./[id].module.css";
 import Link from "next/link";
 import ButtonIconContainer from "@/src/components/button/ButtonIcon/ButtonIconContainer";
 import { RiArrowLeftLine, RiEyeLine, RiHeart3Line } from "react-icons/ri";
-import Image from "next/image";
-import nelson from "../../../public/images/author/nelson-rodrigues.jpg";
 import GradientsContainer from "@/src/components/button/Gradients/GradientsContainer";
-import {
-  fetchQuotes,
-  getAllQuotesIds,
-  getPage,
-  joinSentence,
-} from "../api/notionApi";
+import { fetchQuotes, getAllQuotesIds, getPage } from "../api/notionApi";
 import MobileButtonsContainer from "@/src/components/button/MobileButtons/MobileButtonsContainer";
+import Author from "@/src/components/quotes/support/Author";
+import QuotePageHead from "@/src/components/quotes/support/QuotePageHead";
+import QuoteText from "@/src/components/quotes/support/QuoteText";
+import VerificationText from "@/src/components/quotes/support/VerificationText";
 
 const SingleQuotePage = ({ quote }) => {
-  const {
-    Author,
-    AuthorTitle,
-    Quote,
-    Source,
-    VerificationLink,
-    VerificationSource,
-  } = quote;
-
   return (
     <>
-      <Head>
-        <title>Citação de {joinSentence(Author.rich_text)}</title>
-        <Head>
-          <meta
-            name="description"
-            content={`Citações verificadas de ${joinSentence(
-              Author.rich_text,
-            )}! Autorias verificadas uma a uma para garantir história e créditos sempre respeitados.`}
-          />
-        </Head>
-      </Head>
+      <QuotePageHead {...quote} />
+
       <div className={styles.background}>
         <section className={styles.content}>
           {/* Back home Link */}
@@ -55,36 +33,9 @@ const SingleQuotePage = ({ quote }) => {
           >
             <div className={styles.quoteContainer}>
               <div className={styles.quote}>
-                <div className={`${styles.author}`}>
-                  <Image
-                    src={nelson}
-                    alt={`Foto de ${joinSentence(Author.rich_text)}`}
-                    className={styles.authorImg}
-                  />
-                  <div>
-                    <p className="body-M">
-                      <cite>
-                        <Link href="/" className={styles.authorName}>
-                          {joinSentence(Author.rich_text)}
-                        </Link>
-                      </cite>
-                    </p>
-                    <p className="body-S">
-                      {joinSentence(AuthorTitle.rich_text)}
-                    </p>
-                  </div>
-                </div>
-
-                <blockquote>
-                  <p className={`heading-M`}>{Quote.title[0].plain_text}</p>
-                </blockquote>
-                <p className={`body-S ${styles.verification} `}>
-                  {joinSentence(Source.rich_text)} Verificado através de{" "}
-                  <a href={VerificationLink.url} target="blank">
-                    {joinSentence(VerificationSource.rich_text)}
-                  </a>
-                  .
-                </p>
+                <Author {...quote} image={true} />
+                <QuoteText {...quote} />
+                <VerificationText {...quote} />
               </div>
               <hr />
               <div className={`body-L ${styles.engagement}`}>
@@ -104,19 +55,14 @@ const SingleQuotePage = ({ quote }) => {
           </article>
 
           {/* Desktop Actions Icons */}
-          <div className={`${styles.iconsContainer}`}>
-            <ButtonIconContainer />
-          </div>
+          <ButtonIconContainer className={`${styles.iconsContainer}`} />
 
           {/* Mobile Actions */}
-          <div className={`${styles.mobileActions}`}>
-            <MobileButtonsContainer />
-          </div>
+          <MobileButtonsContainer />
 
           {/* Gradient Icons */}
-          <div className={styles.colorsContainer}>
-            <GradientsContainer />
-          </div>
+
+          <GradientsContainer className={styles.gradientsContainer} />
 
           {/* Is this quote wrong? */}
           <footer className={`body-S neutral-20 ${styles.footer}`}>
