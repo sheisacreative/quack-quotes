@@ -113,16 +113,11 @@
 }
 
 @media screen and (max-width: 768px) {
-  .iconsContainer {
-    display: none;
-  }
-  .mobileActions {
-    display: initial;
+  .content {
+    margin: 0.5rem 0;
+    padding: 1rem;
   }
 
-  .content {
-    position: initial;
-  }
   .quoteContainerBG {
     width: 95vw;
     height: auto;
@@ -135,5 +130,12 @@
 
   .colorsContainer {
     display: none;
+  }
+
+  .iconsContainer {
+    display: none;
+  }
+  .mobileActions {
+    display: initial;
   }
 }
