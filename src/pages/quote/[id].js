@@ -4,14 +4,21 @@ import Link from "next/link";
 import ButtonIconContainer from "@/src/components/button/ButtonIcon/ButtonIconContainer";
 import { RiArrowLeftLine, RiEyeLine, RiHeart3Line } from "react-icons/ri";
 import GradientsContainer from "@/src/components/button/Gradients/GradientsContainer";
-import { fetchQuotes, getAllQuotesIds, getPage } from "../api/notionApi";
+import {
+  clearSingleQuote,
+  fetchQuotes,
+  getAllQuotesIds,
+  getPage,
+} from "../api/notionApi";
 import MobileButtonsContainer from "@/src/components/button/MobileButtons/MobileButtonsContainer";
 import Author from "@/src/components/quotes/support/Author";
 import QuotePageHead from "@/src/components/quotes/support/QuotePageHead";
 import QuoteText from "@/src/components/quotes/support/QuoteText";
 import VerificationText from "@/src/components/quotes/support/VerificationText";
 
-const SingleQuotePage = ({ quote }) => {
+const SingleQuotePage = ({ originalQuote }) => {
+  const quote = clearSingleQuote(originalQuote);
+
   return (
     <>
       <QuotePageHead {...quote} />
@@ -82,11 +89,11 @@ export default SingleQuotePage;
 export async function getStaticProps(context) {
   try {
     const page = await getPage(context.params.id);
-    return { props: { quote: page.properties } };
+    return { props: { originalQuote: page.properties } };
   } catch (e) {
     console.log("Error retrieving page props :(");
     console.log(e);
-    return { props: { quote: null } };
+    return { props: { originalQuote: null } };
   }
 }
 

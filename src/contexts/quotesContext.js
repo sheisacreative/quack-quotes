@@ -1,19 +1,31 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
+import { clearMultipleQuotes } from "../pages/api/notionApi";
 
 const QuotesContext = createContext();
 
-const QuotesProvider = ({ children, quotes }) => {
+const QuotesProvider = ({ children, originalQuotes }) => {
+  const [quotes, setQuotes] = useState(null);
+
   const [randomQuote, setRandomQuote] = useState(null);
 
+  // Returns a number between 0 and quotes.length - 1
+  const raffleRandomIndex = (number) => {
+    const randomIndex = Math.floor(Math.random() * number);
+    return randomIndex;
+  };
+
+  // Clear quotes from the API
   useEffect(() => {
-    const raffleRandomQuote = () => {
-      const randomIndex = Math.floor(Math.random() * quotes.length);
-      // Returns a number between 0 and quotes.length - 1
+    const clearedQuotes = clearMultipleQuotes(originalQuotes);
+    setQuotes(clearedQuotes);
+  }, [originalQuotes]);
 
-      setRandomQuote({ ...quotes[randomIndex].properties });
-    };
-
-    raffleRandomQuote();
+  // Raffle a random quote
+  useEffect(() => {
+    if (quotes) {
+      const index = raffleRandomIndex(quotes.length);
+      setRandomQuote(quotes[index]);
+    }
   }, [quotes]);
 
   return (

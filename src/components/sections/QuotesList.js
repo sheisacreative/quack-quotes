@@ -10,20 +10,17 @@ const QuotesList = () => {
     <section className={`container ${styles.quotesList}`}>
       <div className={styles.title}>
         <h2 className="heading-S">
-          <b>{quotes.length} Citações</b> verificadas
+          <b>{quotes && quotes.length} Citações</b> verificadas
         </h2>
         <hr className={styles.titleLine} />
       </div>
       <div className={styles.quotesContainer}>
-        {quotes.map((quote) => {
-          return (
-            <SingleQuote
-              key={quote.id}
-              quoteId={quote.id}
-              quote={quote.properties}
-            />
-          );
-        })}
+        {quotes &&
+          quotes.map((quote) => {
+            return (
+              <SingleQuote key={quote.id} quoteId={quote.id} quote={quote} />
+            );
+          })}
       </div>
     </section>
   );

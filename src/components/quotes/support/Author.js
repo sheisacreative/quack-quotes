@@ -2,18 +2,17 @@ import React from "react";
 import styles from "./Author.module.css";
 import Image from "next/image";
 import Link from "next/link";
-import { joinSentence } from "@/src/pages/api/notionApi";
 import nelson from "../../../../public/images/author/nelson-rodrigues.jpg";
 import { firstLower } from "@/src/utils/supportFunctions";
 
-const Author = ({ Author, AuthorTitle, image, className }) => {
+const Author = ({ author, authorTitle, image, className }) => {
   return (
     <div className={`${styles.author}`}>
       {/* Author image */}
       {image && (
         <Image
           src={nelson}
-          alt={`Foto de ${joinSentence(Author.rich_text)}`}
+          alt={`Foto de ${author}`}
           className={styles.authorImg}
         />
       )}
@@ -25,18 +24,17 @@ const Author = ({ Author, AuthorTitle, image, className }) => {
           <p className="body-M">
             <cite>
               <Link href="/" className={styles.authorName}>
-                {joinSentence(Author.rich_text)}
+                {author}
               </Link>
             </cite>
           </p>
-          <p className="body-S">{joinSentence(AuthorTitle.rich_text)}</p>
+          <p className="body-S">{authorTitle}</p>
         </div>
       ) : (
         // Without image: Author and title side by side.
         <p className={`${className} ${styles.authorInfo}`}>
           <cite>
-            {joinSentence(Author.rich_text)},{" "}
-            {firstLower(joinSentence(AuthorTitle.rich_text))}
+            {author}, {firstLower(authorTitle)}
           </cite>
         </p>
       )}

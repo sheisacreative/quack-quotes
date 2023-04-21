@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Hero from "../components/sections/Hero";
 import QuotesList from "@/src/components/sections/QuotesList";
 import QuackTitle from "@/src/components/sections/QuackTitle";
@@ -6,9 +6,9 @@ import QuotesProvider from "../contexts/quotesContext";
 
 import { fetchQuotes } from "./api/notionApi";
 
-const Home = ({ quotes }) => {
+const Home = ({ originalQuotes }) => {
   return (
-    <QuotesProvider quotes={quotes}>
+    <QuotesProvider originalQuotes={originalQuotes}>
       <main>
         <QuackTitle />
         <Hero />
@@ -24,9 +24,9 @@ export async function getStaticProps() {
   try {
     const databaseId = process.env.NOTION_DATABASE_ID;
 
-    const quotes = await fetchQuotes(databaseId);
+    const originalQuotes = await fetchQuotes(databaseId);
 
-    return { props: { quotes: quotes } };
+    return { props: { originalQuotes } };
   } catch (e) {
     console.log("Error getting all quotes :(");
     console.log(e);

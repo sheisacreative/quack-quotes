@@ -38,3 +38,42 @@ export const joinSentence = (myArray) => {
 
   return sentence;
 };
+
+// Creates an array with tags
+export const getTagsArray = (array) => {
+  const tagsArray = array.map((tag) => {
+    return tag.name;
+  });
+
+  return tagsArray;
+};
+
+// Clear data from a single quote
+export const clearSingleQuote = (singleQuote) => {
+  return {
+    author: joinSentence(singleQuote.author.rich_text),
+    authorTitle: joinSentence(singleQuote.authorTitle.rich_text),
+    quote: joinSentence(singleQuote.quote.title),
+    source: joinSentence(singleQuote.source.rich_text),
+    tags: getTagsArray(singleQuote.tags.multi_select),
+    verificationLink: singleQuote.verificationLink.url,
+    verificationSource: joinSentence(singleQuote.verificationSource.rich_text),
+    status: singleQuote.status.status.name,
+  };
+};
+
+// Clear data from the API and selects just important data
+export const clearMultipleQuotes = (quotes) => {
+  const clearedQuotes = quotes.map((singleQuote) => {
+    const clearedSingleQuote = clearSingleQuote(singleQuote.properties);
+
+    return { ...clearedSingleQuote, id: singleQuote.id };
+  });
+
+  // Filters to show only approved quotes
+  const approvedQuotes = clearedQuotes.filter(
+    (quote) => quote.status === "Approved",
+  );
+
+  return approvedQuotes;
+};
