@@ -5,19 +5,21 @@ import QuackTitle from "@/src/components/sections/QuackTitle";
 import QuotesProvider from "../contexts/quotesContext";
 
 import { fetchQuotes } from "./api/notionApi";
-import Navbar from "../components/sections/Navbar";
 import Layout from "../components/support/Layout";
+import NavigationProvider from "../contexts/navigationContext";
 
 const Home = ({ originalQuotes }) => {
   return (
     <QuotesProvider originalQuotes={originalQuotes}>
-      <Layout>
-        <main>
-          <QuackTitle />
-          <Hero />
-          <QuotesList />
-        </main>
-      </Layout>
+      <NavigationProvider>
+        <Layout>
+          <main>
+            <QuackTitle />
+            <Hero />
+            <QuotesList />
+          </main>
+        </Layout>
+      </NavigationProvider>
     </QuotesProvider>
   );
 };

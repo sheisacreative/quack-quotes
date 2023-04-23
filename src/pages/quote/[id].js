@@ -15,7 +15,6 @@ import Author from "@/src/components/quotes/support/Author";
 import QuotePageHead from "@/src/components/quotes/support/QuotePageHead";
 import QuoteText from "@/src/components/quotes/support/QuoteText";
 import VerificationText from "@/src/components/quotes/support/VerificationText";
-import Layout from "@/src/components/support/Layout";
 
 const SingleQuotePage = ({ originalQuote }) => {
   const quote = clearSingleQuote(originalQuote);
@@ -23,65 +22,64 @@ const SingleQuotePage = ({ originalQuote }) => {
   return (
     <>
       <QuotePageHead {...quote} />
-      <Layout>
-        <div className={styles.background}>
-          <section className={styles.content}>
-            {/* Back home Link */}
-            <Link href="/" className={`body-M neutral-20 ${styles.backLink}`}>
-              <RiArrowLeftLine />
-              Voltar para citações
-            </Link>
 
-            {/* Quote container */}
-            <article
-              className={styles.quoteContainerBG}
-              style={{
-                background: "linear-gradient(180deg, #FF7A00 0%, #DBB800 100%)",
-              }}
-            >
-              <div className={styles.quoteContainer}>
-                <div className={styles.quote}>
-                  <Author {...quote} image={true} />
-                  <QuoteText {...quote} />
-                  <VerificationText {...quote} />
-                </div>
-                <hr />
-                <div className={`body-L ${styles.engagement}`}>
-                  <p>
-                    <RiEyeLine />
-                    13.4k
-                  </p>
-                  <p>
-                    <RiHeart3Line />
-                    4.2k
-                  </p>
-                </div>
+      <div className={styles.background}>
+        <section className={styles.content}>
+          {/* Back home Link */}
+          <Link href="/" className={`body-M neutral-20 ${styles.backLink}`}>
+            <RiArrowLeftLine />
+            Voltar para citações
+          </Link>
+
+          {/* Quote container */}
+          <article
+            className={styles.quoteContainerBG}
+            style={{
+              background: "linear-gradient(180deg, #FF7A00 0%, #DBB800 100%)",
+            }}
+          >
+            <div className={styles.quoteContainer}>
+              <div className={styles.quote}>
+                <Author {...quote} image={true} />
+                <QuoteText {...quote} />
+                <VerificationText {...quote} />
               </div>
-              <p className={`${styles.quackQuotesLink} body-S neutral-0`}>
-                quackquotes.com.br
-              </p>
-            </article>
+              <hr />
+              <div className={`body-L ${styles.engagement}`}>
+                <p>
+                  <RiEyeLine />
+                  13.4k
+                </p>
+                <p>
+                  <RiHeart3Line />
+                  4.2k
+                </p>
+              </div>
+            </div>
+            <p className={`${styles.quackQuotesLink} body-S neutral-0`}>
+              quackquotes.com.br
+            </p>
+          </article>
 
-            {/* Desktop Actions Icons */}
-            <ButtonIconContainer className={`${styles.iconsContainer}`} />
+          {/* Desktop Actions Icons */}
+          <ButtonIconContainer className={`${styles.iconsContainer}`} />
 
-            {/* Mobile Actions */}
-            <MobileButtonsContainer />
+          {/* Mobile Actions */}
+          <MobileButtonsContainer />
 
-            {/* Gradient Icons */}
+          {/* Gradient Icons */}
 
-            <GradientsContainer className={styles.gradientsContainer} />
+          <GradientsContainer className={styles.gradientsContainer} />
 
-            {/* Is this quote wrong? */}
-            <footer className={`body-S neutral-20 ${styles.footer}`}>
-              <p>
-                Esta citação está errada?{" "}
-                <a href="https://quackredacao.com.br/">Informe o erro</a>.
-              </p>
-            </footer>
-          </section>
-        </div>
-      </Layout>
+          {/* Is this quote wrong? */}
+          <footer className={`body-S neutral-20 ${styles.footer}`}>
+            <p>
+              Esta citação está errada?{" "}
+              <a href="https://quackredacao.com.br/">Informe o erro</a>.
+            </p>
+          </footer>
+        </section>
+      </div>
     </>
   );
 };

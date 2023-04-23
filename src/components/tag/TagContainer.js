@@ -1,10 +1,10 @@
 import React from "react";
 import SingleTag from "./SingleTag";
 import styles from "./TagContainer.module.css";
-import { useQuotesContext } from "@/src/contexts/quotesContext";
+import { useNavigationContext } from "@/src/contexts/navigationContext";
 
 const TagContainer = () => {
-  const { tags } = useQuotesContext();
+  const { tags } = useNavigationContext();
 
   return (
     <ul className={`${styles.tagContainer}`}>
