@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import styles from "./SingleTag.module.css";
 
-const SingleTag = () => {
+const SingleTag = ({ tag }) => {
   return (
     <li>
-      <button className={`body-S ${styles.singleTag}`}>Nome da Tag</button>
+      <button className={`body-S ${styles.singleTag}`}>{tag}</button>
     </li>
   );
 };
