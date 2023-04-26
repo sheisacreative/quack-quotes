@@ -1,11 +1,29 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
-import { useQuotesContext } from "./quotesContext";
+import { clearMultipleQuotes } from "../pages/api/notionApi";
 
 const NavigationContext = createContext();
 
-const NavigationProvider = ({ children }) => {
-  const { quotes } = useQuotesContext();
+const NavigationProvider = ({ children, originalQuotes }) => {
+  const [quotes, setQuotes] = useState(null);
   const [tags, setTags] = useState(null);
+  const [selectedTag, setSeletecTag] = useState("");
+
+  // Clear quotes
+  useEffect(() => {
+    if (originalQuotes) {
+      setQuotes(clearMultipleQuotes(originalQuotes));
+    }
+  }, [originalQuotes]);
+
+  // Slug from text
+  const diacritic = require("diacritic");
+
+  const turnToSlug = (str) => {
+    str = diacritic.clean(str.toLowerCase().trim()); // remover acentos e converter para minúsculas
+    str = str.replace(/[^\w\s-]/g, ""); // remover caracteres especiais
+    str = str.replace(/[\s_]+/g, "-"); // substituir espaços e underscores por traços
+    return str;
+  };
 
   // Returns an arridy with tags
   const defineTagsArray = (quotes) => {
@@ -29,7 +47,9 @@ const NavigationProvider = ({ children }) => {
   }, [quotes]);
 
   return (
-    <NavigationContext.Provider value={{ tags }}>
+    <NavigationContext.Provider
+      value={{ tags, turnToSlug, selectedTag, setSeletecTag }}
+    >
       {children}
     </NavigationContext.Provider>
   );

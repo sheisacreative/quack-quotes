@@ -6,12 +6,25 @@ import { useNavigationContext } from "@/src/contexts/navigationContext";
 const TagContainer = () => {
   const { tags } = useNavigationContext();
 
-  return (
-    <ul className={`${styles.tagContainer}`}>
-      {tags &&
-        tags.map((tag, index) => {
+  if (tags) {
+    return (
+      <ul className={`${styles.tagContainer}`}>
+        {tags.map((tag, index) => {
           return <SingleTag key={index} tag={tag} />;
         })}
+      </ul>
+    );
+  }
+
+  return (
+    <ul className={`${styles.tagContainer}`}>
+      <SingleTag isLoading />
+      <SingleTag isLoading />
+      <SingleTag isLoading />
+      <SingleTag isLoading />
+      <SingleTag isLoading />
+      <SingleTag isLoading />
+      <SingleTag isLoading />
     </ul>
   );
 };

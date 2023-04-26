@@ -123,3 +123,22 @@ hr {
 .neutral-0 {
   color: var(--neutral-0);
 }
+
+/* Loading animation */
+@keyframes loadAnimation {
+  from {
+    background-color: var(--neutral-5);
+  }
+  to {
+    background-color: var(--neutral-20);
+  }
+}
+
+.loading {
+  color: var(--neutral-10);
+  animation-duration: 1s;
+  animation-name: loadAnimation;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  min-width: 10rem;
+}
