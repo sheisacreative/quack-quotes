@@ -1,30 +1,32 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styles from "./SingleTag.module.css";
 import Link from "next/link";
 import { useNavigationContext } from "@/src/contexts/navigationContext";
+import { turnToSlug } from "@/src/utils/supportFunctions";
 
-const SingleTag = ({ tag, isLoading }) => {
-  const { turnToSlug, selectedTag, setSeletecTag } = useNavigationContext();
+const SingleTag = ({ name, isLoading }) => {
+  const { selectedTag, setSeletecTag } = useNavigationContext();
 
   if (isLoading) {
     return <li className={`body-S loading ${styles.singleTag}`}>...</li>;
   }
 
-  const slug = `/category/${turnToSlug(tag)}`;
+  const slug = `/category/${turnToSlug(name)}`;
+
+  const handleClick = () => {
+    setSeletecTag(name);
+  };
 
   return (
     <li>
       <Link
-        href={slug}
+        href={{ pathname: slug }}
         className={`body-S ${styles.singleTag} ${
-          selectedTag === tag ? styles.isSelected : ""
+          selectedTag === name ? styles.isSelected : ""
         }`}
-        onClick={() => {
-          console.log(selectedTag);
-          setSeletecTag(tag);
-        }}
+        onClick={handleClick}
       >
-        {tag}
+        {name}
       </Link>
     </li>
   );

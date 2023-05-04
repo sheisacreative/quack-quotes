@@ -3,7 +3,7 @@
   gap: 0.25rem;
   list-style-type: none;
   padding: 0;
-  overflow-x: hidden;
+  overflow-x: auto;
   white-space: nowrap;
   margin-left: calc(((100vw - (100vw - 100%)) - 1200px) / 2);
   /* (100vw - (100vw - 100%))

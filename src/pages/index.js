@@ -10,15 +10,11 @@ import NavigationProvider from "../contexts/navigationContext";
 const Home = ({ originalQuotes }) => {
   return (
     <QuotesProvider originalQuotes={originalQuotes}>
-      <NavigationProvider originalQuotes={originalQuotes}>
-        <Layout>
-          <main>
-            <QuackTitle />
-            <Hero />
-            <QuotesList />
-          </main>
-        </Layout>
-      </NavigationProvider>
+      <main>
+        <QuackTitle />
+        <Hero />
+        <QuotesList />
+      </main>
     </QuotesProvider>
   );
 };

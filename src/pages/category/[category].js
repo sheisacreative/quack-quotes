@@ -1,38 +1,52 @@
 import React from "react";
-import { fetchQuotes } from "../api/notionApi";
-import NavigationProvider from "@/src/contexts/navigationContext";
-import Layout from "@/src/components/support/Layout";
+import { fetchFilteredQuotes } from "../api/notionApi";
 import QuotesList from "@/src/components/sections/QuotesList";
+import QuotesProvider from "@/src/contexts/quotesContext";
+import { getTagNameFromSlug } from "@/src/utils/supportFunctions";
+import { tags } from "@/src/data/data";
 
-const CategoryPage = ({ originalQuotes }) => {
+const CategoryPage = ({ filteredQuotes }) => {
   return (
-    <NavigationProvider originalQuotes={originalQuotes}>
-      <Layout>
-        <QuotesList />
-      </Layout>
-    </NavigationProvider>
+    <QuotesProvider originalQuotes={filteredQuotes}>
+      <QuotesList />
+    </QuotesProvider>
   );
 };
 
 export default CategoryPage;
 
-export async function getStaticProps() {
+export async function getStaticProps(context) {
+  const { category } = context.params;
+
   try {
-    const databaseId = process.env.NOTION_DATABASE_ID;
-
-    const originalQuotes = await fetchQuotes(databaseId);
-
-    return { props: { originalQuotes } };
+    const tagName = await getTagNameFromSlug(category, tags);
+    const databaseId = await process.env.NOTION_DATABASE_ID;
+    const filteredQuotes = await fetchFilteredQuotes(databaseId, tagName);
+    return { props: { filteredQuotes } };
   } catch (e) {
-    console.log("Error getting all quotes :(");
+    console.log("🔴 Error getting all quotes from a category :(");
     console.log(e);
     return { props: { originalQuotes: null } };
   }
 }
 
 export async function getStaticPaths() {
-  return {
-    paths: [],
-    fallback: false,
-  };
+  try {
+    const paths = tags.map((tag) => {
+      return {
+        params: {
+          category: tag.slug,
+        },
+      };
+    });
+
+    return {
+      paths,
+      fallback: false,
+    };
+  } catch (e) {
+    console.log("🔴🔴🔴 Error generating static paths :( 🔴🔴🔴");
+    console.log(e);
+    return null;
+  }
 }

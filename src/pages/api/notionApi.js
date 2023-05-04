@@ -1,11 +1,25 @@
+import { getTagsArray } from "@/src/utils/supportFunctions";
 import { Client } from "@notionhq/client";
 
 const notion = new Client({ auth: process.env.NOTION_KEY });
-// const databaseId = process.env.NOTION_DATABASE_ID;
 
 export const fetchQuotes = async (databaseId) => {
   const response = await notion.databases.query({
     database_id: databaseId,
+  });
+
+  return response.results;
+};
+
+export const fetchFilteredQuotes = async (databaseId, tagName) => {
+  const response = await notion.databases.query({
+    database_id: databaseId,
+    filter: {
+      property: "tags",
+      multi_select: {
+        contains: tagName,
+      },
+    },
   });
 
   return response.results;
@@ -37,15 +51,6 @@ export const joinSentence = (myArray) => {
   });
 
   return sentence;
-};
-
-// Creates an array with tags
-export const getTagsArray = (array) => {
-  const tagsArray = array.map((tag) => {
-    return tag.name;
-  });
-
-  return tagsArray;
 };
 
 // Clear data from a single quote

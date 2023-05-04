@@ -3,6 +3,8 @@ import "@/src/styles/globals.css";
 import "@/src/styles/styles.css";
 import styles from "./_app.module.css";
 import { favicon } from "../../public/favicon.ico";
+import Layout from "../components/support/Layout";
+import NavigationProvider from "../contexts/navigationContext";
 
 export default function App({ Component, pageProps }) {
   return (
@@ -16,10 +18,13 @@ export default function App({ Component, pageProps }) {
         />
         <link rel="icon" type="image/x-icon" href={favicon} />
       </Head>
-
-      <div className={styles.pageContainer}>
-        <Component {...pageProps} />
-      </div>
+      <NavigationProvider>
+        <Layout>
+          <div className={styles.pageContainer}>
+            <Component {...pageProps} />
+          </div>
+        </Layout>
+      </NavigationProvider>
     </>
   );
 }
