@@ -1,15 +1,41 @@
 .tagContainer {
+  position: relative;
   display: flex;
   gap: 0.25rem;
   list-style-type: none;
   padding: 0;
-  overflow-x: auto;
+  overflow-x: hidden;
   white-space: nowrap;
   margin-left: calc(((100vw - (100vw - 100%)) - 1200px) / 2);
-  /* (100vw - (100vw - 100%))
-     100% = width with scrollbar
-     100vw - 100% = scrollbar width
-     100vw - (100vw - 100%) = width without scrollbar */
+}
+
+.containerDesktop {
+  overflow: hidden;
+  flex-wrap: wrap;
+  height: 2rem;
+  transition: height 0.4s ease-out;
+}
+
+.showTagsButton {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  cursor: pointer;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 1) 15%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  border: none;
+  height: 2rem;
+  text-decoration: underline;
+  color: var(--neutral-60);
+  padding-left: 2rem;
+}
+
+.showTags {
+  height: 7rem;
 }
 
 @media screen and (max-width: 1405px) {
