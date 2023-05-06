@@ -1,21 +1,31 @@
-import React from "react";
+import React, { useRef } from "react";
 import styles from "./SingleQuote.module.css";
 import ButtonIconContainer from "../button/ButtonIcon/ButtonIconContainer";
-import { actionIcons } from "../../data/data";
 import { useRouter } from "next/router";
 import Author from "./support/Author";
 import QuoteText from "./support/QuoteText";
 import VerificationText from "./support/VerificationText";
+import ButtonLinkContainer from "../button/ButtonIcon/ButtonLinkContainer";
 
 const SingleQuote = ({ quote, quoteId }) => {
+  const actionButtonElement = useRef();
+  const actionLinkElement = useRef();
   const router = useRouter();
 
-  const navigateToSingleQuote = () => {
-    router.push(`/quote/${quoteId}`);
+  const navigateToSingleQuote = (e) => {
+    if (
+      !actionButtonElement.current.contains(e.target) &&
+      !actionLinkElement.current.contains(e.target)
+    ) {
+      router.push(`/quote/${quoteId}`);
+    }
   };
 
   return (
-    <article className={styles.singleQuote} onClick={navigateToSingleQuote}>
+    <article
+      className={styles.singleQuote}
+      onClick={(e) => navigateToSingleQuote(e)}
+    >
       {/* Quote */}
       <div className={styles.quoteContainer}>
         <QuoteText {...quote} />
@@ -24,19 +34,13 @@ const SingleQuote = ({ quote, quoteId }) => {
       </div>
 
       {/* Action Buttons */}
-      <div className={styles.iconsContainer}>
-        <ButtonIconContainer />
+      <div className={styles.iconsContainer} ref={actionButtonElement}>
+        <ButtonIconContainer quote={quote} />
       </div>
-      <div className={`body-M ${styles.actionsContainer}`}>
-        {actionIcons.map((action) => {
-          return (
-            <React.Fragment key={action.id}>
-              {" "}
-              <button className={styles.actionButton}>{action.action}</button>
-              {action.id != 3 ? <div className={styles.line} /> : ""}
-            </React.Fragment>
-          );
-        })}
+
+      {/* Action Buttons Links - Mobile */}
+      <div className={styles.linksContainer} ref={actionLinkElement}>
+        <ButtonLinkContainer quote={quote} />
       </div>
     </article>
   );

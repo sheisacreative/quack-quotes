@@ -15,12 +15,13 @@ import Author from "@/src/components/quotes/support/Author";
 import QuotePageHead from "@/src/components/quotes/support/QuotePageHead";
 import QuoteText from "@/src/components/quotes/support/QuoteText";
 import VerificationText from "@/src/components/quotes/support/VerificationText";
+import ActionProvider from "@/src/contexts/actionsContext";
 
 const SingleQuotePage = ({ originalQuote }) => {
   const quote = clearSingleQuote(originalQuote);
 
   return (
-    <>
+    <ActionProvider>
       <QuotePageHead {...quote} />
 
       <div className={styles.background}>
@@ -62,10 +63,13 @@ const SingleQuotePage = ({ originalQuote }) => {
           </article>
 
           {/* Desktop Actions Icons */}
-          <ButtonIconContainer className={`${styles.iconsContainer}`} />
+          <ButtonIconContainer
+            className={`${styles.iconsContainer}`}
+            quote={quote}
+          />
 
           {/* Mobile Actions */}
-          <MobileButtonsContainer />
+          <MobileButtonsContainer quote={quote} />
 
           {/* Gradient Icons */}
 
@@ -80,7 +84,7 @@ const SingleQuotePage = ({ originalQuote }) => {
           </footer>
         </section>
       </div>
-    </>
+    </ActionProvider>
   );
 };
 

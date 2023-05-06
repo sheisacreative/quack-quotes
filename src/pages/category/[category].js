@@ -4,11 +4,14 @@ import QuotesList from "@/src/components/sections/QuotesList";
 import QuotesProvider from "@/src/contexts/quotesContext";
 import { getTagNameFromSlug } from "@/src/utils/supportFunctions";
 import { tags } from "@/src/data/data";
+import ActionProvider from "@/src/contexts/actionsContext";
 
 const CategoryPage = ({ filteredQuotes }) => {
   return (
     <QuotesProvider originalQuotes={filteredQuotes}>
-      <QuotesList />
+      <ActionProvider>
+        <QuotesList />
+      </ActionProvider>
     </QuotesProvider>
   );
 };

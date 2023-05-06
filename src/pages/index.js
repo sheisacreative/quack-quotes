@@ -2,19 +2,20 @@ import React from "react";
 import Hero from "../components/sections/Hero";
 import QuotesList from "@/src/components/sections/QuotesList";
 import QuackTitle from "@/src/components/sections/QuackTitle";
-import QuotesProvider, { useQuotesContext } from "../contexts/quotesContext";
+import QuotesProvider from "../contexts/quotesContext";
 import { fetchQuotes } from "./api/notionApi";
-import Layout from "../components/support/Layout";
-import NavigationProvider from "../contexts/navigationContext";
+import ActionProvider from "../contexts/actionsContext";
 
 const Home = ({ originalQuotes }) => {
   return (
     <QuotesProvider originalQuotes={originalQuotes}>
-      <main>
-        <QuackTitle />
-        <Hero />
-        <QuotesList />
-      </main>
+      <ActionProvider>
+        <main>
+          <QuackTitle />
+          <Hero />
+          <QuotesList />
+        </main>
+      </ActionProvider>
     </QuotesProvider>
   );
 };

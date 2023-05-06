@@ -24,9 +24,17 @@
   display: none;
 }
 
+.linksContainer {
+  display: none;
+}
+
 @media screen and (max-width: 768px) {
   .iconsContainer {
     display: none;
+  }
+
+  .linksContainer {
+    display: block;
   }
 
   .singleQuote {
@@ -46,27 +54,5 @@
 
   .quoteContainer {
     width: initial;
-  }
-
-  .actionsContainer {
-    display: flex;
-    gap: 0.25rem;
-    flex-wrap: wrap;
-  }
-
-  .actionButton {
-    display: flex;
-    gap: 0.5rem;
-    align-items: center;
-    justify-content: center;
-    border: none;
-    color: var(--primary-dark);
-    background-color: var(--neutral-5);
-  }
-
-  .line {
-    margin-top: 10px;
-    border-left: 1px solid var(--primary-dark);
-    height: 0.75rem;
   }
 }

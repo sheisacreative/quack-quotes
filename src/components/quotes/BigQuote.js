@@ -25,7 +25,7 @@ const BigQuote = () => {
         <VerificationText marginTop {...randomQuote} />
       </div>
       <div className={styles.iconsContainer}>
-        <ButtonIconContainer />
+        <ButtonIconContainer quote={randomQuote} />
       </div>
     </article>
   );

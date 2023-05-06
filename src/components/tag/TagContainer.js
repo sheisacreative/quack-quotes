@@ -10,8 +10,6 @@ const TagContainer = () => {
   const [containerHeight, setContainerHeight] = useState(0);
   const [containerWidth, setContainerWidth] = useState(0);
   const tagsListContainer = useRef();
-  console.log(width);
-  console.log(isMobile);
 
   useEffect(() => {
     const height = tagsListContainer.current.offsetHeight;

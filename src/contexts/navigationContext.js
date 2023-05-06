@@ -1,6 +1,4 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
-import { useQuotesContext } from "./quotesContext";
-import { defineTagsArray } from "../utils/supportFunctions";
 import { useRouter } from "next/router";
 import { tags } from "../data/data";
 

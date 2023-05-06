@@ -2,6 +2,8 @@
   position: relative;
   overflow: hidden;
   height: 2rem;
+  margin-left: auto;
+
   transition: height 0.3s ease-out;
 }
 
@@ -45,7 +47,7 @@
 }
 
 @media screen and (max-width: 1405px) {
-  .tagContainer {
+  .tagsContainer {
     margin-left: calc(((100vw - (100vw - 100%)) - 85vw) / 2);
   }
 }
