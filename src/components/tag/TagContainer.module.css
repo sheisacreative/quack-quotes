@@ -1,19 +1,29 @@
-.tagContainer {
+.tagsContainer {
   position: relative;
-  display: flex;
-  gap: 0.25rem;
-  list-style-type: none;
-  padding: 0;
-  overflow-x: hidden;
-  white-space: nowrap;
-  margin-left: calc(((100vw - (100vw - 100%)) - 1200px) / 2);
+  overflow: hidden;
+  height: 2rem;
+  transition: height 0.3s ease-out;
 }
 
-.containerDesktop {
-  overflow: hidden;
+.tagsList {
+  display: flex;
+  height: auto;
+  padding: 0;
+  gap: 0.25rem;
   flex-wrap: wrap;
-  height: 2rem;
-  transition: height 0.4s ease-out;
+  list-style-type: none;
+  white-space: nowrap;
+}
+
+.isMobile {
+  overflow: auto;
+  padding: 0 0 0.75rem 0;
+  height: auto;
+  box-sizing: border-box;
+}
+
+.isMobile .tagsList {
+  flex-wrap: nowrap;
 }
 
 .showTagsButton {
@@ -32,10 +42,6 @@
   text-decoration: underline;
   color: var(--neutral-60);
   padding-left: 2rem;
-}
-
-.showTags {
-  height: 7rem;
 }
 
 @media screen and (max-width: 1405px) {
