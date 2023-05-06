@@ -8,14 +8,11 @@ const TagContainer = () => {
   const [width, setWidth] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
   const [containerHeight, setContainerHeight] = useState(0);
-  const [containerWidth, setContainerWidth] = useState(0);
   const tagsListContainer = useRef();
 
   useEffect(() => {
     const height = tagsListContainer.current.offsetHeight;
-    const width = tagsListContainer.current.offsetWidth;
     setContainerHeight(height);
-    setContainerWidth(width);
   }, [tagsListContainer]);
 
   function handleWindowSizeChange() {
@@ -41,17 +38,15 @@ const TagContainer = () => {
   if (tags) {
     return (
       <div
-        className={`container ${isMobile && styles.isMobile} ${
-          styles.tagsContainer
-        }`}
+        className={`${!isMobile && `container`} ${
+          isMobile && styles.isMobile
+        } ${styles.tagsContainer}`}
         style={{
-          height: showTags && `${containerHeight}px`,
-          marginLeft:
-            isMobile &&
-            `calc(((100vw - (100vw - 100%)) - ${containerWidth}px) / 2)`,
-          width:
-            isMobile &&
-            `calc(100vw - (((100vw - (100vw - 100%)) - ${containerWidth}px) / 2))`,
+          height: isMobile
+            ? `auto`
+            : showTags
+            ? `${containerHeight}px`
+            : `2rem`,
         }}
       >
         {!isMobile && (
