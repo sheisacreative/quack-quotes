@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import styles from "./[id].module.css";
 import Link from "next/link";
 import ButtonIconContainer from "@/src/components/button/ButtonIcon/ButtonIconContainer";
@@ -16,15 +16,30 @@ import QuotePageHead from "@/src/components/quotes/support/QuotePageHead";
 import QuoteText from "@/src/components/quotes/support/QuoteText";
 import VerificationText from "@/src/components/quotes/support/VerificationText";
 import ActionProvider from "@/src/contexts/actionsContext";
+import { useRouter } from "next/router";
+import ShareModal from "@/src/components/sections/ShareModal";
 
 const SingleQuotePage = ({ originalQuote }) => {
+  const [showShareModal, setShowShareModal] = useState(false);
   const quote = clearSingleQuote(originalQuote);
+  const background = useRef();
+  const router = useRouter();
+
+  const handleModal = (e) => {
+    if (e.target === background.current) {
+      router.push("/");
+    }
+  };
 
   return (
     <ActionProvider>
-      <QuotePageHead {...quote} />
+      <QuotePageHead quote={quote} />
 
-      <div className={styles.background}>
+      <div
+        className={styles.background}
+        onClick={(e) => handleModal(e)}
+        ref={background}
+      >
         <section className={styles.content}>
           {/* Back home Link */}
           <Link href="/" className={`body-M neutral-20 ${styles.backLink}`}>

@@ -142,3 +142,20 @@ hr {
   animation-direction: alternate;
   min-width: 10rem;
 }
+
+/* Social button */
+.socialBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  background-color: var(--neutral-10);
+  border: 1px solid var(--neutral-20);
+  padding: 1rem;
+  border-radius: 0.25rem;
+  transition: 0.4s;
+}
+
+.socialBtn:hover {
+  background-color: var(--neutral-20);
+}
