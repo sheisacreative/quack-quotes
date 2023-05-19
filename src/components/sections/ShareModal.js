@@ -8,11 +8,29 @@ import FacebookShareButton from "../shareButtons/FacebookShareButton";
 import WhatsAppShareButton from "../shareButtons/WhatsAppShareButton";
 
 const ShareButtons = ({ quote }) => {
-  const { setShareModal, currentQuote } = useActionContext();
+  const { setShareModal, currentQuote, setShowFeedback, setMessage } =
+    useActionContext();
+
   const [quoteUrl, setQuoteUrl] = useState(null);
   const [quoteText, setQuoteText] = useState(null);
+  const [closeModal, setCloseModal] = useState(false);
   const background = useRef();
+  const buttonBox = useRef();
   const { asPath } = useRouter();
+
+  useEffect(() => {
+    console.log(closeModal);
+    if (closeModal) {
+      setTimeout(() => {
+        setShareModal(false);
+        setCloseModal(false);
+        setShowFeedback(true);
+        setMessage("Obrigado por compartilhar! O Quack ama você. 🐣");
+      }, 1000);
+    }
+  }, [closeModal, setShareModal, setMessage, setShowFeedback]);
+
+  // Defines quote URL
   useEffect(() => {
     const url = () => {
       const origin =
@@ -27,12 +45,13 @@ const ShareButtons = ({ quote }) => {
     setQuoteUrl(url);
   }, [asPath, currentQuote, quote]);
 
+  // Defines the quote text
   useEffect(() => {
     setQuoteText(
       quote
         ? `\"${quote.quote}\"\n${quote.author}`
         : currentQuote
-        ? `\"${currentQuote.quote}\"\n${currentQuote.author}`
+        ? `\"${currentQuote.quote}\"\n${currentQuote.author}\n\n`
         : "",
     );
   }, [currentQuote, quote]);
@@ -44,13 +63,23 @@ const ShareButtons = ({ quote }) => {
     }
   };
 
+  const handleAutomaticCloseModal = (e) => {
+    if (e.target !== buttonBox.current) {
+      setCloseModal(true);
+    }
+  };
+
   return (
     <div
       className={styles.background}
       onClick={(e) => handleModal(e)}
       ref={background}
     >
-      <section className={styles.content}>
+      <section
+        className={styles.content}
+        onClick={(e) => handleAutomaticCloseModal(e)}
+        ref={buttonBox}
+      >
         {/* Share to WhatsApp */}
         <WhatsAppShareButton text={quoteText} url={quoteUrl} />
 
