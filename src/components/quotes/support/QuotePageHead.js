@@ -1,5 +1,4 @@
 import { useActionContext } from "@/src/contexts/actionsContext";
-import { joinSentence } from "@/src/pages/api/notionApi";
 import Head from "next/head";
 import React from "react";
 import ShareModal from "../../sections/ShareModal";

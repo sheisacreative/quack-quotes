@@ -40,7 +40,7 @@
 
 # 👀 Demo Website
 
-👉 Demo: https://quack-quotes.vercel.app/
+👉 Demo: https://citacoes.quackredacao.com.br/
 
 # 💻 Technologies
 
