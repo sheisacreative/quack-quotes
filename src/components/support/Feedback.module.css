@@ -1,0 +1,21 @@
+.container {
+  position: fixed;
+  text-align: center;
+  z-index: 2;
+  bottom: 24px;
+  min-width: 400px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: solid 1px var(--primary);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  color: var(--neutral-0);
+  background-color: var(--primary-dark);
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    margin: 1rem;
+    min-width: 80%;
+  }
+}

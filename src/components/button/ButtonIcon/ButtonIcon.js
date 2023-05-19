@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "./ButtonIcon.module.css";
 import { useActionContext } from "@/src/contexts/actionsContext";
-import ShareButtons from "../../sections/ShareModal";
 
 const ButtonIcon = ({ quote, action, icon }) => {
   const { triggerAction } = useActionContext();
