@@ -87,6 +87,8 @@ const ActionProvider = ({ children }) => {
     if (action === "Baixar imagem") {
       if (router.pathname.startsWith(`/quote`)) {
         downloadImage();
+        setMessage("Oba! Já estamos baixando sua imagem...");
+        setShowFeedback(true);
       } else if (quote) {
         router.push(`/quote/${quote.id}`);
       } else {
