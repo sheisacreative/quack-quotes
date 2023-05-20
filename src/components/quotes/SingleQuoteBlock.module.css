@@ -1,7 +1,11 @@
+.borderRadiusContainer {
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
 .quoteContainerBG {
   width: 768px;
   height: 768px;
-  border-radius: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;

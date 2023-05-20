@@ -1,4 +1,11 @@
-import React, { createContext, useContext, useEffect, useState } from "react";
+import React, {
+  createContext,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
+import { toJpeg } from "html-to-image";
 
 const ActionContext = createContext();
 
@@ -7,6 +14,7 @@ const ActionProvider = ({ children }) => {
   const [currentQuote, setCurrentQuote] = useState(null);
   const [showFeedback, setShowFeedback] = useState(false);
   const [message, setMessage] = useState("");
+  const quoteImage = useRef();
 
   // Reset the feedback
   useEffect(() => {
@@ -26,6 +34,7 @@ const ActionProvider = ({ children }) => {
     }
   }, [showFeedback]);
 
+  // Copy quote
   const copyQuote = (quote) => {
     try {
       navigator.clipboard.writeText(
@@ -34,6 +43,25 @@ const ActionProvider = ({ children }) => {
       setMessage("Citação copiada com sucesso! 🐣💛");
     } catch (e) {
       setMessage("Oops! Deu algum ruim aqui. Não copiou. :(");
+      console.log(e);
+    }
+  };
+
+  // Download image
+  const downloadImage = async () => {
+    try {
+      if (quoteImage.current) {
+        const dataUrl = await toJpeg(quoteImage.current);
+
+        // download image
+        const link = document.createElement("a");
+        link.download = "html-to-img.jpg";
+        link.href = dataUrl;
+        link.click();
+      }
+    } catch (e) {
+      setShowFeedback(true);
+      setMessage("Ops! Erro ao baixar imagem. :(");
       console.log(e);
     }
   };
@@ -48,6 +76,11 @@ const ActionProvider = ({ children }) => {
       setShareModal(true);
       setCurrentQuote(quote);
     }
+
+    if (action === "Baixar imagem") {
+      downloadImage();
+      console.log("baixar");
+    }
   };
 
   return (
@@ -61,6 +94,7 @@ const ActionProvider = ({ children }) => {
         setShowFeedback,
         message,
         setMessage,
+        quoteImage,
       }}
     >
       {children}
