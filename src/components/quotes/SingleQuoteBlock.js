@@ -4,13 +4,16 @@ import Author from "./support/Author";
 import QuoteText from "./support/QuoteText";
 import VerificationText from "./support/VerificationText";
 import { RiEyeLine, RiHeart3Line } from "react-icons/ri";
+import { useGradientContext } from "@/src/contexts/gradientContext";
 
 const SingleQuoteBlock = ({ quote }) => {
+  const { gradient } = useGradientContext();
+
   return (
     <article
       className={styles.quoteContainerBG}
       style={{
-        background: "linear-gradient(180deg, #FF7A00 0%, #DBB800 100%)",
+        background: gradient,
       }}
     >
       <div className={styles.quoteContainer}>

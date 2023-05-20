@@ -7,8 +7,11 @@ const ButtonIcon = ({ quote, action, icon }) => {
 
   return (
     <>
-      <li onClick={() => triggerAction(action, quote)}>
-        <button className={`body-S ${styles.action}`}>
+      <li>
+        <button
+          onClick={() => triggerAction(action, quote)}
+          className={`body-S ${styles.action}`}
+        >
           <div className={styles.icon}>{icon}</div>
           <span className={styles.actionText}>
             {action === "Compartilhar" ? "" : action}
