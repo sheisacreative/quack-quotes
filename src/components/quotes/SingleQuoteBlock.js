@@ -13,37 +13,36 @@ const SingleQuoteBlock = ({ quote }) => {
 
   return (
     // This div was added to make sure the quote has border radius but when downloaded it doesn't have it.
-    <div className={styles.borderRadiusContainer}>
-      <article
-        className={styles.quoteContainerBG}
-        ref={quoteImage}
-        style={{
-          background: gradient,
-        }}
-      >
-        <div className={styles.quoteContainer}>
-          <div className={styles.quote}>
-            <Author {...quote} image={true} />
-            <QuoteText {...quote} />
-            <VerificationText {...quote} />
-          </div>
-          <hr />
-          <div className={`body-L ${styles.engagement}`}>
-            <p>
-              <RiEyeLine />
-              13.4k
-            </p>
-            <p>
-              <RiHeart3Line />
-              4.2k
-            </p>
-          </div>
+
+    <article
+      className={styles.quoteContainerBG}
+      ref={quoteImage}
+      style={{
+        background: gradient,
+      }}
+    >
+      <div className={styles.quoteContainer}>
+        <div className={styles.quote}>
+          <Author {...quote} image={true} />
+          <QuoteText {...quote} />
+          <VerificationText {...quote} />
         </div>
-        <p className={`${styles.quackQuotesLink} body-S neutral-0`}>
-          quackquotes.com.br
-        </p>
-      </article>
-    </div>
+        <hr />
+        <div className={`body-L ${styles.engagement}`}>
+          <p>
+            <RiEyeLine />
+            13.4k
+          </p>
+          <p>
+            <RiHeart3Line />
+            4.2k
+          </p>
+        </div>
+      </div>
+      <p className={`${styles.quackQuotesLink} body-S neutral-0`}>
+        quackquotes.com.br
+      </p>
+    </article>
   );
 };
 

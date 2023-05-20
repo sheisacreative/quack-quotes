@@ -51,11 +51,16 @@ const ActionProvider = ({ children }) => {
   const downloadImage = async () => {
     try {
       if (quoteImage.current) {
-        const dataUrl = await toJpeg(quoteImage.current);
+        const dataUrl = await toJpeg(quoteImage.current, {
+          quality: 0.95,
+          style: { borderRadius: 0 },
+          // canvasWidth: 800,
+          // canvasHeight: 800,
+        });
 
         // download image
         const link = document.createElement("a");
-        link.download = "html-to-img.jpg";
+        link.download = "quack-quotes.jpg";
         link.href = dataUrl;
         link.click();
       }
