@@ -6,6 +6,7 @@ import React, {
   useState,
 } from "react";
 import { toJpeg } from "html-to-image";
+import { useRouter } from "next/router";
 
 const ActionContext = createContext();
 
@@ -15,6 +16,7 @@ const ActionProvider = ({ children }) => {
   const [showFeedback, setShowFeedback] = useState(false);
   const [message, setMessage] = useState("");
   const quoteImage = useRef();
+  const router = useRouter();
 
   // Reset the feedback
   useEffect(() => {
@@ -83,8 +85,14 @@ const ActionProvider = ({ children }) => {
     }
 
     if (action === "Baixar imagem") {
-      downloadImage();
-      console.log("baixar");
+      if (router.pathname.startsWith(`/quote`)) {
+        downloadImage();
+      } else if (quote) {
+        router.push(`/quote/${quote.id}`);
+      } else {
+        setMessage("Oops! Deus um erro aqui. :(");
+        setShowFeedback(true);
+      }
     }
   };
 
