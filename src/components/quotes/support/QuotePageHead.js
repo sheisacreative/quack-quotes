@@ -1,7 +1,7 @@
 import { useActionContext } from "@/src/contexts/actionsContext";
 import Head from "next/head";
 import React from "react";
-import ShareModal from "../../sections/ShareModal";
+import ShareModal from "../../modal/ShareModal";
 import { AnimatePresence } from "framer-motion";
 import Feedback from "../../support/Feedback";
 

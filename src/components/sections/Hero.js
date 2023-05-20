@@ -2,7 +2,7 @@ import React from "react";
 import BigQuote from "../quotes/BigQuote";
 import styles from "./Hero.module.css";
 import { useActionContext } from "@/src/contexts/actionsContext";
-import ShareModal from "./ShareModal";
+import ShareModal from "../modal/ShareModal";
 import Feedback from "../support/Feedback";
 import { AnimatePresence } from "framer-motion";
 
