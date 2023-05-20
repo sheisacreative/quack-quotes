@@ -1,102 +1,22 @@
-import React, { useRef } from "react";
-import styles from "./[id].module.css";
-import Link from "next/link";
-import ButtonIconContainer from "@/src/components/button/ButtonIcon/ButtonIconContainer";
-import { RiArrowLeftLine, RiEyeLine, RiHeart3Line } from "react-icons/ri";
-import GradientsContainer from "@/src/components/button/Gradients/GradientsContainer";
+import React from "react";
 import {
   clearSingleQuote,
   fetchQuotes,
   getAllQuotesIds,
   getPage,
 } from "../api/notionApi";
-import MobileButtonsContainer from "@/src/components/button/MobileButtons/MobileButtonsContainer";
-import Author from "@/src/components/quotes/support/Author";
-import QuotePageHead from "@/src/components/quotes/support/QuotePageHead";
-import QuoteText from "@/src/components/quotes/support/QuoteText";
-import VerificationText from "@/src/components/quotes/support/VerificationText";
 import ActionProvider from "@/src/contexts/actionsContext";
-import { useRouter } from "next/router";
+import GradientProvider from "@/src/contexts/gradientContext";
+import QuoteModal from "@/src/components/modal/QuoteModal";
 
 const SingleQuotePage = ({ originalQuote }) => {
   const quote = clearSingleQuote(originalQuote);
-  const background = useRef();
-  const router = useRouter();
-
-  const handleModal = (e) => {
-    if (e.target === background.current) {
-      router.push("/");
-    }
-  };
 
   return (
     <ActionProvider>
-      <QuotePageHead quote={quote} />
-
-      <div
-        className={styles.background}
-        onClick={(e) => handleModal(e)}
-        ref={background}
-      >
-        <section className={styles.content}>
-          {/* Back home Link */}
-          <Link href="/" className={`body-M neutral-20 ${styles.backLink}`}>
-            <RiArrowLeftLine />
-            Voltar para citações
-          </Link>
-
-          {/* Quote container */}
-          <article
-            className={styles.quoteContainerBG}
-            style={{
-              background: "linear-gradient(180deg, #FF7A00 0%, #DBB800 100%)",
-            }}
-          >
-            <div className={styles.quoteContainer}>
-              <div className={styles.quote}>
-                <Author {...quote} image={true} />
-                <QuoteText {...quote} />
-                <VerificationText {...quote} />
-              </div>
-              <hr />
-              <div className={`body-L ${styles.engagement}`}>
-                <p>
-                  <RiEyeLine />
-                  13.4k
-                </p>
-                <p>
-                  <RiHeart3Line />
-                  4.2k
-                </p>
-              </div>
-            </div>
-            <p className={`${styles.quackQuotesLink} body-S neutral-0`}>
-              quackquotes.com.br
-            </p>
-          </article>
-
-          {/* Desktop Actions Icons */}
-          <ButtonIconContainer
-            className={`${styles.iconsContainer}`}
-            quote={quote}
-          />
-
-          {/* Mobile Actions */}
-          <MobileButtonsContainer quote={quote} />
-
-          {/* Gradient Icons */}
-
-          <GradientsContainer className={styles.gradientsContainer} />
-
-          {/* Is this quote wrong? */}
-          <footer className={`body-S neutral-20 ${styles.footer}`}>
-            <p>
-              Esta citação está errada?{" "}
-              <a href="https://quackredacao.com.br/">Informe o erro</a>.
-            </p>
-          </footer>
-        </section>
-      </div>
+      <GradientProvider>
+        <QuoteModal quote={quote} />
+      </GradientProvider>
     </ActionProvider>
   );
 };
