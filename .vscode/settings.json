@@ -11,7 +11,7 @@
     "vercel.json": true,
     "next.config.js": true,
     "jsconfig.json": true,
-    ".env.local": true,
+    // ".env.local": true,
     "LICENSE": true
   }
 }
